@@ -1,14 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
+    "./src/index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     fontFamily: {
-      primary: 'Orbitron',
-      secondary: 'Rajdhani',
-      tertiary: 'Aldrich',
+      'primary': ['Playfair Display', 'sans-serif'],
+      'secondary': ['Rajdhani', 'sans-serif'],
+      'tertiary': ['Playfair Display', 'sans-serif'],
     },
     container: {
       padding: {
@@ -24,14 +25,14 @@ export default {
     extend: {
       colors: {
         primary: '#0a0a0a',
-        accent: '#B809C3',
+        accent: "#baffcd",
       },
       backgroundImage: {
-        site: "url('./assets/site-bg.jpg')",
+        // site: "url('./assets/oresundsbron.avif')",
         about: "url('./assets/about.png')",
         services: "url('./assets/services.png')",
       },
     },
   },
   plugins: [],
-}
+};

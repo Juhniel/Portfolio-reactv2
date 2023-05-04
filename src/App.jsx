@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import Banner from './components/Banner';
 import Header from './components/Header';
@@ -11,9 +11,24 @@ import Contact from './components/Contact';
 
 
 export default function App() {
+  const [theme, setTheme] = useState("light");
+
+  //  LIGHT / DARK - MODE
+  function handleThemeSwitch() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return(
-    <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-    <Header />
+    <div className='bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-black'>
+    <Header toggleTheme={handleThemeSwitch} theme={theme}/>
     <Banner />
     <Nav />
     <About />
