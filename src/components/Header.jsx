@@ -5,7 +5,7 @@ export default function Header({ handleThemeDark, handleThemeLight, theme }) {
   return(
     <header className='py-8'>
       <div className='container mx-auto'>
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center '>
           {/* logo */}
           <a href="#">
             {/* <img src={Logo} className="w-24" alt="" /> */}

@@ -27,7 +27,7 @@ export default function Banner() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[55px] mb-1 font-light leading-[0.8] lg:text-[110px] text-black dark:text-white"
+              className="text-[55px] mb-2 font-light leading-[0.8] lg:text-[110px] text-black dark:text-white"
             >
               {name.map((letter, index) => {
                 return (
@@ -65,11 +65,21 @@ export default function Banner() {
             >
               - welcome to my porfolio
             </motion.p>
-            <div className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0">
+            <motion.div 
+            variants={fadeIn("up", 0.6)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0">
               <button className="btn btn-lg">Contact me</button>
-            </div>
+            </motion.div>
             {/* Socials */}
-            <div className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0">
+            <motion.div 
+            variants={fadeIn("up", 0.7)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0">
               <a href="#">
                 <FaFacebook className="text-black dark:text-white" />
               </a>
@@ -79,16 +89,20 @@ export default function Banner() {
               <a href="#">
                 <FaLinkedinIn className="text-black dark:text-white" />
               </a>
-            </div>
+            </motion.div>
           </div>
           {/* image */}
-          <div className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
+          <motion.div 
+          variants={fadeIn("down", 0.5)}
+          initial="hidden"
+          whileInView={"show"}
+          className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
             <img
               src={Selfie}
-              className="w-[400px] rounded-full filter transition-all duration-300 grayscale hover:grayscale-0"
+              className="w-[400px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0"
               alt=""
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
