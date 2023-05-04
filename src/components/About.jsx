@@ -13,19 +13,26 @@ export default function About() {
     threshold: 0.5,
   })
 
-  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  const unitRenderer = (unit) => ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-      // Render a complete state
-      return <span className='text-black'>Graduation!!!</span>;
+      return <span className='text-black'>0</span>;
     } else {
-      // Render a countdown
-      return (
-        <span className='text-black'>
-          {days}:{hours}:{minutes}:{seconds}
-        </span>
-      );
+      switch (unit) {
+        case 'days':
+          return <span className='text-black dark:text-white'>{days}</span>;
+        case 'hours':
+          return <span className='text-black dark:text-white'>{hours}</span>;
+        case 'minutes':
+          return <span className='text-black dark:text-white'>{minutes}</span>;
+        case 'seconds':
+          return <span className='text-black dark:text-white'>{seconds}</span>;
+        default:
+          return null;
+      }
     }
   };
+
+  const graduationDate = new Date('2024-05-30T00:00:00');
 
 
   return(
@@ -35,18 +42,25 @@ export default function About() {
           {/* img */}
           <div className="flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top"></div>
           {/* text */}
-          <div>
+          <div className='font-primary text-black dark:text-white'>
             <h2>About me</h2>
             <h3>I'm a student at Grit Academy, Malmö. </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quae quas distinctio facilis culpa officiis asperiores at reiciendis aspernatur libero!
             </p>
             {/* stats */}
-            <div>
+            <div className='flex'>
               <div>
-                <div>
-                  <CountDown date={new Date('2024-05-30T00:00:00')} renderer={renderer} intervalDelay={0}/>
+                <div className='text-[40px] mb-2 font-secondary'>
+                  <CountDown date={graduationDate} renderer={unitRenderer('days')} intervalDelay={0}/>
+                  <CountDown date={graduationDate} renderer={unitRenderer('hours')} intervalDelay={0}/>
+                  <CountDown date={graduationDate} renderer={unitRenderer('minutes')} intervalDelay={0}/>
+                  <CountDown date={graduationDate} renderer={unitRenderer('seconds')} intervalDelay={0}/>
                 </div>
+                <div className='font-primary text-sm tracking-[2px]'> 
+                  Days - Hours - Minutes - Seconds <br/>
+                   - Graduation -
+                  </div>
               </div>
             </div>
           </div>
