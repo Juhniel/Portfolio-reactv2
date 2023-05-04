@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Services() {
   return(
-    <div>Services</div>
+    <section id='services' className='section'>Services</section>
   )
 }

@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function About() {
   return(
-    <div>About</div>
+    <section id='about' className='section'>About</section>
   )
 }

@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Work() {
   return(
-    <div>Work</div>
+    <section id='work' className='section'>Work</section>
   )
 }

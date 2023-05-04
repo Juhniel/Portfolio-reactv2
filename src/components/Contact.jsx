@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Contact() {
   return(
-    <div>Contact</div>
+    <section id='contact' className='section'>Contact</section>
   )
 }
