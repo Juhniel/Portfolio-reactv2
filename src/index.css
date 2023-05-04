@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-  background-color: #274046
-}
-
 .active {
-  background-color: #274046;
+  background-color: #444c4ffe;
 }
 
 span {
@@ -31,7 +27,7 @@ span {
     @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
   }
   .btn {
-    @apply rounded-full font-primary text-white font-medium;
+    @apply border-2 font-primary text-black border-black dark:border-white dark:text-white font-medium ;
   }
   .btn-sm {
     @apply h-[48px] px-6 text-sm;

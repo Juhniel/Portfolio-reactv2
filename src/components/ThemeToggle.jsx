@@ -1,24 +1,22 @@
-import {BsSun, BsMoonStars} from "react-icons/bs"
+import { BsSun, BsMoonStars } from "react-icons/bs";
 
-export default function ThemeToggle({ toggleTheme, theme }) {
-
+export default function ThemeToggle({ handleThemeDark, handleThemeLight, theme }) {
   return (
+    <>
     <button
-      onClick={toggleTheme}
-      className="w-14 h-7 rounded-full p-1 bg-white dark:bg-gray-900 relative transition-colors duration-500 ease-in focus:outline-none focus:ring-2 focus:ring-white dark:focus:ring-white focus:border-transparent"
+      onClick={handleThemeLight}
     >
-      <BsSun
-        color="black"
-        className={`absolute top-1 left-1 transition-opacity duration-300 ease-out ${
-          theme === "dark" ? "opacity-0" : "opacity-100"
-        }`}
-      />
-      <BsMoonStars
-        
-        className={`absolute top-1 right-1 transition-opacity duration-300 ease-out ${
-          theme === "dark" ? "opacity-100" : "opacity-0"
-        }`}
-      />
+        <BsSun
+          className="text-black w-8 dark:text-white hover:text-amber-400 dark:hover:text-amber-400"
+        />
     </button>
+    <button
+      onClick={handleThemeDark}
+    >
+        <BsMoonStars
+         className="text-black dark:text-white w-4 hover:text-yellow-400 dark:hover:text-yellow-200"
+        />
+    </button>
+    </>
   );
 }

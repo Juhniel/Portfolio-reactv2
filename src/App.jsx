@@ -14,8 +14,11 @@ export default function App() {
   const [theme, setTheme] = useState("light");
 
   //  LIGHT / DARK - MODE
-  function handleThemeSwitch() {
-    setTheme(theme === "dark" ? "light" : "dark");
+  function handleThemeLight() {
+    setTheme("light");
+  }
+  function handleThemeDark() {
+    setTheme("dark");
   }
 
   useEffect(() => {
@@ -28,7 +31,7 @@ export default function App() {
 
   return(
     <div className='bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white'>
-    <Header toggleTheme={handleThemeSwitch} theme={theme}/>
+    <Header handleThemeLight={handleThemeLight} handleThemeDark={handleThemeDark} theme={theme}/>
     <Banner />
     <Nav />
     <About />

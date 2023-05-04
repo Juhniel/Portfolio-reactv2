@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
-export default function Header({ toggleTheme, theme }) {
+export default function Header({ handleThemeDark, handleThemeLight, theme }) {
   return(
     <header className='py-8'>
       <div className='container mx-auto'>
@@ -15,7 +15,7 @@ export default function Header({ toggleTheme, theme }) {
             Work with me
           </button> */}
       
-            <ThemeToggle toggleTheme={toggleTheme} theme={theme}/>
+            <ThemeToggle handleThemeDark={handleThemeDark} handleThemeLight={handleThemeLight} theme={theme}/>
             {/* <BsMoonStars color='black'/> */}
         </div>
       </div>
