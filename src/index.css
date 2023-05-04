@@ -6,13 +6,12 @@
   background-color: #274046
 }
 
-.btn:hover {
-  background-color: #18272b;
+.active {
+  background-color: #274046;
 }
 
-
-.active {
-  background-color: rgb(18, 29, 18);
+span {
+  display: inline-block;
 }
 
 .active {

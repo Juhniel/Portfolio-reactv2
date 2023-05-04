@@ -27,7 +27,7 @@ export default function App() {
   }, [theme]);
 
   return(
-    <div className='bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-black'>
+    <div className='bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white'>
     <Header toggleTheme={handleThemeSwitch} theme={theme}/>
     <Banner />
     <Nav />
