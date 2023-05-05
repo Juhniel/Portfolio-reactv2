@@ -100,7 +100,7 @@ export default function Banner() {
           className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
             <img
               src={Selfie}
-              className="w-[400px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0"
+              className="w-[400px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0 "
               alt=""
             />
           </motion.div>
