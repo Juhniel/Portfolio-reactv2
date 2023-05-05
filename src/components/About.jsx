@@ -9,8 +9,11 @@ import { motion } from "framer-motion"
 import { fadeIn } from '../variants';
 
 import Selfie from "../assets/selfie2.png"
+import TextAnimation from './TextAnimation';
 
 export default function About() {
+  const title = "About me".split("");
+
   const [ref, inView] = useInView({
     threshold: 0.5,
   })
@@ -34,9 +37,6 @@ export default function About() {
     }
   };
 
-  // <CountDown date={graduationDate} renderer={unitRenderer('hours')} intervalDelay={0}/> <span>Hours{"\u00A0"}</span>
-  // <CountDown date={graduationDate} renderer={unitRenderer('minutes')} intervalDelay={0}/> <span>Minutes{"\u00A0"}</span>
-  // <CountDown date={graduationDate} renderer={unitRenderer('seconds')} intervalDelay={0}/> <span>Seconds{"\u00A0"}</span>
   const graduationDate = new Date('2024-05-30T00:00:00');
 
 
@@ -50,13 +50,34 @@ export default function About() {
           </div>
           {/* text */}
           <div className='font-primary text-black dark:text-white'>
-            <h2 className=''>About me</h2>
-            <h3>I'm a student at Grit Academy, Malmö. </h3>
+            <h1 className='font-primary text-[32px]'>
+            {title.map((letter, index) => {
+                return (
+                  <TextAnimation key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation>
+                );
+              })}
+            </h1>
+            <h3 className='h3'>Upcoming software developer</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quae quas distinctio facilis culpa officiis asperiores at reiciendis aspernatur libero!
+              I am currently studying to become a software developer. 
+
+              My interest in development started in 2022 when I decided to give <span className='font-semibold'>Java</span>   a try. 
+              <br/>
+              Fast-forward to today, I started school, met awesome people and fell in love with programming and 
+              web development. 
+              <br/>
+              <br/>
+              <span className='flex justify-center'>Turns out I found my real passion in life..</span> 
+              <br/>
+              <span className='flex justify-center'>Do not hessitate to contact me to get to know me or for any other inquiries.</span> 
+            
             </p>
             {/* stats */}
-            <div className='flex justify-center text-[48px] mt-12'>Graduation</div>
+            <div className='flex justify-center text-[48px] mt-12'>
+              <h3 className="font-primary">Graduation</h3>
+              </div>
             <div className='flex justify-center mt-14 gap-x-8 lg:gap-x-10 mb-12'>
               <div>
                 <div className='text-[40px] mb-2 font-secondary text-amber-400 dark:text-yellow-300'>
