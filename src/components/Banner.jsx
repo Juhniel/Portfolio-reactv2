@@ -1,6 +1,7 @@
 import React from "react";
 // images
-import Selfie from "../assets/cv.jpg";
+import Selfie from "../assets/cv-nobg.png";
+// import Selfie from "../assets/cv.jpg";
 // icons
 import { FaGithub, FaFacebook, FaLinkedinIn } from "react-icons/fa";
 

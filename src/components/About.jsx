@@ -8,6 +8,8 @@ import { motion } from "framer-motion"
 
 import { fadeIn } from '../variants';
 
+import Selfie from "../assets/selfie2.png"
+
 export default function About() {
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -40,7 +42,9 @@ export default function About() {
       <div className="container mx-auto">
         <div>
           {/* img */}
-          <div className="flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top"></div>
+          <div className="flex justify-center mb-10">
+            <img className="w-[240px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0" src={Selfie} alt="" />
+          </div>
           {/* text */}
           <div className='font-primary text-black dark:text-white'>
             <h2>About me</h2>
@@ -49,17 +53,16 @@ export default function About() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quae quas distinctio facilis culpa officiis asperiores at reiciendis aspernatur libero!
             </p>
             {/* stats */}
-            <div className='flex'>
+            <div className='flex mt-14'>
               <div>
                 <div className='text-[40px] mb-2 font-secondary'>
-                  <CountDown date={graduationDate} renderer={unitRenderer('days')} intervalDelay={0}/>
-                  <CountDown date={graduationDate} renderer={unitRenderer('hours')} intervalDelay={0}/>
-                  <CountDown date={graduationDate} renderer={unitRenderer('minutes')} intervalDelay={0}/>
-                  <CountDown date={graduationDate} renderer={unitRenderer('seconds')} intervalDelay={0}/>
+                  <CountDown date={graduationDate} renderer={unitRenderer('days')} intervalDelay={0}/> <span>Days{"\u00A0"}</span>
+                  <CountDown date={graduationDate} renderer={unitRenderer('hours')} intervalDelay={0}/> <span>Hours{"\u00A0"}</span>
+                  <CountDown date={graduationDate} renderer={unitRenderer('minutes')} intervalDelay={0}/> <span>Minutes{"\u00A0"}</span>
+                  <CountDown date={graduationDate} renderer={unitRenderer('seconds')} intervalDelay={0}/> <span>Seconds{"\u00A0"}</span>
                 </div>
                 <div className='font-primary text-sm tracking-[2px]'> 
-                  Days - Hours - Minutes - Seconds <br/>
-                   - Graduation -
+                   Graduation 
                   </div>
               </div>
             </div>
