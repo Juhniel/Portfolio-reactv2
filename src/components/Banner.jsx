@@ -1,14 +1,8 @@
 import React from "react";
-// images
 import Selfie from "../assets/cv-nobg.png";
-// import Selfie from "../assets/cv.jpg";
-// icons
 import { FaGithub, FaFacebook, FaLinkedinIn } from "react-icons/fa";
-
 import { TypeAnimation } from "react-type-animation";
-
 import { motion } from "framer-motion";
-
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
 
@@ -45,12 +39,21 @@ export default function Banner() {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-4 ml-6 text-[36px] lg:text-[60px] font-secondary font-semibold  leading-[1]"
             >
-              <span className="mr-3 font-tertiary text-black dark:text-white">
+              <span className="mr-2 font-tertiary text-black dark:text-white">
                 I'm a
               </span>
 
               <TypeAnimation
-                sequence={["developer", 2000, "..", 500, "student", 2000, "..", 500]}
+                sequence={[
+                  "developer",
+                  2000,
+                  "..",
+                  2000,
+                  "student",
+                  2000,
+                  "..",
+                  2000,
+                ]}
                 speed={30}
                 className="text-black font-tertiary dark:text-white"
                 wrapper="span"
@@ -66,21 +69,23 @@ export default function Banner() {
             >
               - welcome to my porfolio
             </motion.p>
-            <motion.div 
-            variants={fadeIn("up", 0.6)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.7 }}
-            className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0">
+            <motion.div
+              variants={fadeIn("up", 0.6)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
+            >
               <button className="btn btn-lg">Contact me</button>
             </motion.div>
             {/* Socials */}
-            <motion.div 
-            variants={fadeIn("up", 0.7)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.7 }}
-            className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0">
+            <motion.div
+              variants={fadeIn("up", 0.7)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
+            >
               <a href="#">
                 <FaFacebook className="text-black dark:text-white" />
               </a>
@@ -93,11 +98,12 @@ export default function Banner() {
             </motion.div>
           </div>
           {/* image */}
-          <motion.div 
-          variants={fadeIn("down", 0.5)}
-          initial="hidden"
-          whileInView={"show"}
-          className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
+          <motion.div
+            variants={fadeIn("down", 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]"
+          >
             <img
               src={Selfie}
               className="w-[400px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0 "

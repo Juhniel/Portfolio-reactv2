@@ -29,7 +29,7 @@ export default {
       },
       backgroundImage: {
         // site: "url('./assets/oresundsbron.avif')",
-        // about: "url('./assets/selfie2.png')",
+        about: "url('./assets/selfie2.png')",
         services: "url('./assets/services.png')",
       },
     },
