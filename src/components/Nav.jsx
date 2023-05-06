@@ -32,7 +32,7 @@ export default function Nav() {
             <BiUser />
           </Link>
           <Link
-            to="services"
+            to="experience"
             activeClass="active"
             smooth={true}
             spy={true}
