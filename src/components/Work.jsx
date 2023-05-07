@@ -11,7 +11,7 @@ import Img3 from "../assets/project-webshop.png";
 export default function Work() {
   return (
     <section id="work" className="section">
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-40">
         <div className="flex flex-col lg:flex-row gap-x-12">
           <motion.div 
           variants={fadeIn("right", 0.3)}

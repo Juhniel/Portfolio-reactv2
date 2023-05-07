@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { TypeAnimation } from "react-type-animation";
 
-import Selfie from "../assets/selfie2.png";
 import TextAnimation from "./TextAnimation";
 
 export default function About() {
@@ -218,7 +217,7 @@ export default function About() {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center"
             >
-              <button className="btn btn-lg">My portfolio</button>
+              <button className="btn btn-lg">Experience</button>
             </motion.div>
           </motion.div>
         </div>

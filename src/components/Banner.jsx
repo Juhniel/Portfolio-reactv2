@@ -16,7 +16,7 @@ export default function Banner() {
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* text */}
-          <div className="flex-1 text-center font-tertiary lg:text-left">
+          <div className="flex-1 text-center font-primary lg:text-left">
             <motion.h1
               variants={fadeIn("up", 0.3)}
               initial="hidden"
