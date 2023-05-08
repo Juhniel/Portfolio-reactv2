@@ -8,7 +8,10 @@ import Img3 from "../assets/project-webshop.png";
 
 
 
-export default function Work() {
+export default function Work({handleViewWork}) {
+  
+ 
+
   return (
     <section id="work" className="section">
       <div className="container mx-auto mt-40">
@@ -28,9 +31,10 @@ export default function Work() {
               <p className="max-w-sm mb-16 text">
                 Lorem ipsum dolor sit amet consectetur, 
                 adipisicing elit. Ut porro excepturi dolore 
-                quasi vel aperiam vero illum dolorem repellendus facilis.
+                quasi vel aperiam vero illum dolorem repellendus facilis.asjfoasjfoaskoaskasko
+
               </p>
-              <button className="btn btn-sm">View my work</button>
+              <button className="btn btn-sm" onClick={handleViewWork}>View my work</button>
             </div>
             {/* image */}
             <div className="group relative overflow-hidden dark:border-2 dark:border-white rounded-xl">

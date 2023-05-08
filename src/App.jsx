@@ -29,6 +29,10 @@ export default function App() {
     }
   }, [theme]);
 
+  function handleViewWork(){
+    
+  }
+
   return(
     <div className='bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white'>
     <Header handleThemeLight={handleThemeLight} handleThemeDark={handleThemeDark} theme={theme}/>
@@ -36,7 +40,7 @@ export default function App() {
     <Nav />
     <About />
     <Experience />
-    <Work />
+    <Work handleViewWork={handleViewWork} />
     <Contact />
     <div className='h-[4000px]'></div>
   </div>
