@@ -1,7 +1,7 @@
 import React from "react";
 
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { motion, AnimatePresence} from "framer-motion";
+import { fadeIn, fadeOut } from "../variants";
 import Img1 from "../assets/project-recipebook.png";
 import Img2 from "../assets/project-portfoliov1.png";
 import Img3 from "../assets/project-webshop.png";
@@ -10,10 +10,14 @@ import Img3 from "../assets/project-webshop.png";
 
 export default function Work({handleViewWork}) {
   
- 
-
   return (
-    <section id="work" className="section">
+    <motion.section
+    variants={fadeIn("right", 0.3)}
+    exit={fadeOut("left", 0).exit}
+    initial="hidden"
+    animate="show"
+    className="section"
+    id="work">
       <div className="container mx-auto mt-40">
         <div className="flex flex-col lg:flex-row gap-x-12">
           <motion.div 
@@ -104,6 +108,6 @@ export default function Work({handleViewWork}) {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-
+import {motion, AnimatePresence} from "framer-motion"
 import Banner from './components/Banner';
 import Header from './components/Header';
 import Nav from './components/Nav';
@@ -7,11 +7,14 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import AllProjects from "./components/AllProjects";
 
 
 
 export default function App() {
   const [theme, setTheme] = useState("light");
+  const [showWork, setShowWork] = useState(true);
+  const [showAnotherComponent, setShowAnotherComponent] = useState(false);
 
   //  LIGHT / DARK - MODE
   function handleThemeLight() {
@@ -30,7 +33,10 @@ export default function App() {
   }, [theme]);
 
   function handleViewWork(){
-    
+    setShowWork(false);
+    setTimeout(() => {
+      setShowAnotherComponent(true);
+    }, 1000); // Adjust the timeout according to your exit animation duration
   }
 
   return(
@@ -40,7 +46,11 @@ export default function App() {
     <Nav />
     <About />
     <Experience />
-    <Work handleViewWork={handleViewWork} />
+    <AnimatePresence>
+    {showWork && <Work handleViewWork={handleViewWork} />}
+    {showAnotherComponent && <AllProjects />}
+  </AnimatePresence>
+    
     <Contact />
     <div className='h-[4000px]'></div>
   </div>
