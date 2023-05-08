@@ -11,17 +11,14 @@ import Img3 from "../assets/project-webshop.png";
 export default function Work({handleViewWork}) {
   
   return (
-    <motion.section
-    variants={fadeIn("right", 0.3)}
-    exit={fadeOut("left", 0).exit}
-    initial="hidden"
-    animate="show"
+    <section
     className="section"
     id="work">
       <div className="container mx-auto mt-40">
         <div className="flex flex-col lg:flex-row gap-x-12">
           <motion.div 
           variants={fadeIn("right", 0.3)}
+          exit={fadeOut("left", 0).exit}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
@@ -62,6 +59,7 @@ export default function Work({handleViewWork}) {
           </motion.div>
           <motion.div 
           variants={fadeIn("left", 0.5)}
+          exit={fadeOut("right", 0).exit}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
@@ -108,6 +106,6 @@ export default function Work({handleViewWork}) {
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
