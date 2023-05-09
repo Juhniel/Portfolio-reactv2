@@ -80,12 +80,12 @@ export default function Experience() {
             className="flex-1"
           >
             {/* experience list */}
-            <div className="text">
+            <div className="text mt-8">
               {experience.map((experience, index) => {
                 const { name, description, title, date, place } = experience;
                 return (
                   <div
-                    className="border-b border-black/20 dark:border-white/20 h-[200px] mb-14 flex"
+                    className="border-b border-black/20 dark:border-white/20 mb-14 lg:h-[200px] flex"
                     key={index}
                   >
                     <div className="max-w-[476px]">
@@ -95,7 +95,7 @@ export default function Experience() {
                       <p className="text font-thin mb-6">
                         {title}
                       </p>
-                      <p className="font-secondary leading-tight">
+                      <p className="font-secondary leading-tight mb-12">
                         {description}
                       </p>
                     </div>

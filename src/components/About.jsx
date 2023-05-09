@@ -118,7 +118,7 @@ export default function About() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex justify-center font-primary text-[48px] tracking-[3px] lg:tracking-[6px] lg:text-[68px] font-thin"
+              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] lg:text-[68px] font-thin"
             >
               <h3>
                 {graduation.map((letter, index) => {
