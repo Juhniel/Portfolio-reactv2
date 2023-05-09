@@ -5,7 +5,7 @@ import Img3 from "../assets/project-webshop.png";
 export default function ProductCard() {
 
     return(
-        <div className="dark:bg-zinc-800 rounded-md p-4 shadow h-[26em] relative overflow-hidden">
+        <div className="dark:bg-zinc-800 rounded-md p-4 shadow relative overflow-hidden">
         {/* Image container */}
         <div className="group relative h-62 ">
           {/* Image */}
@@ -13,19 +13,22 @@ export default function ProductCard() {
           {/* Overlay */}
           <div className="group-hover:bg-black/70 group-hover:scale-125 w-full h-full top-0 absolute z-80 transition-all duration-300"></div>
           {/* Pretitle */}
-          <div className="absolute -top-full left-4 group-hover:top-48 transition-all duration-500 z-50">
+          <div className="absolute -top-full left-4 group-hover:top-80 sm:group-hover:top-[2rem] lg:group-hover:top-[13rem] transition-all duration-500 z-50">
             <span className="text-white">#Spring #MySQL #JavaScript #Thymeleaf</span>
           </div>
           {/* Title */}
-          <div className="absolute -bottom-full left-4 group-hover:bottom-0 transition-all duration-700 z-50">
+          <div className="absolute -top-full left-4 group-hover:top-[22rem] sm:group-hover:top-[11rem] lg:group-hover:top-[15rem] transition-all duration-700 z-50">
             <span className="text-3xl text-white">Recipebook</span>
           </div>
         </div>
         
         {/* Card content */}
-        <div className="mt-12">
-          <h2 className="font-bold mb-2">Title</h2>
-          <p>Description</p>
+        <div className="mt-16">
+          <h2 className="font-bold text-[32px] mb-2 text">Link to Project</h2>
+          <p className="text">Description</p>
+          <p className="text">Description</p>
+          <p className="text">Description</p>
+          <p className="text">Description</p>
         </div>
       </div>
     )
