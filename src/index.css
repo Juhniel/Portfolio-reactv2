@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-custom {
-  @apply font-primary text-white font-light py-0 px-8 relative transition-colors duration-200 ease-in-out;
-}
-
-.btn-custom:hover {
-  background-color: transparent;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.btn-custom:hover rect {
-  stroke-width: 5;
-  stroke-dasharray: 15, 310;
-  stroke-dashoffset: 48;
-  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-}
 
 .active {
   background-color: #444c4ffe;
@@ -33,12 +17,16 @@ span {
   border-radius: 100%;
 }
 
+
 @layer base {
   body {
     @apply font-secondary text-lg leading-8 text-white;
   }
   .text {
-    @apply font-primary text-black dark:text-white
+    @apply font-primary text-black dark:text-white;
+  }
+  .text-hover {
+    @apply hover:text-amber-400 transition-colors duration-700;
   }
   .h2 {
     @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
@@ -55,6 +43,9 @@ span {
   .btn-lg {
     @apply h-[56px] px-10 text-base;
   }
+  .btn-hover {
+    @apply hover:text-amber-400 hover:border-amber-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
+  } 
   .btn-link {
     @apply text-base;
   }

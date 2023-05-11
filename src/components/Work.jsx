@@ -1,6 +1,7 @@
 import React from "react";
 
 import { motion, AnimatePresence} from "framer-motion";
+import TextAnimation from "./TextAnimation";
 import { fadeIn, fadeOut } from "../variants";
 import Img1 from "../assets/project-recipebook.png";
 import Img2 from "../assets/project-portfoliov1.png";
@@ -9,7 +10,8 @@ import Img3 from "../assets/project-webshop.png";
 
 
 export default function Work({handleViewWork}) {
-  
+  const myLatest = "My Latest".split("");
+  const work = "Work".split("");
   return (
     <section
     className="section"
@@ -22,24 +24,35 @@ export default function Work({handleViewWork}) {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[4.7rem] xl:mt-[4.7rem]">
+          className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[4.7rem] xl:mt-[3.8rem]">
             {/* text */}
             <div>
-              <h2 className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10">
-              My Latest <br/>
-              <span className="mt-4">Work</span>
+              <h2 className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[100px] xl:mb-10">
+              {myLatest.map((letter, index) => {
+                return (
+                  <TextAnimation key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation>
+                );
+              })} <br/>
+              <span className="mt-4">  {work.map((letter, index) => {
+                return (
+                  <TextAnimation key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation>
+                );
+              })}</span>
               
               </h2>
-              <p className="max-w-sm mb-16 text">
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Ut porro excepturi dolore 
-                quasi vel aperiam vero illum dolorem repellendus facilis.asjfoasjfoaskoaskasko
-
+              <p className="max-w-lg mb-16 text-secondary text-black dark:text-white">
+              Explore a collection of my most recent projects, 
+              where I showcase my skills in development, web-development and design. <br/> These works demonstrate my passion for creating 
+              innovative solutions and my commitment to continuous learning and improvement.
               </p>
-              <button className="btn btn-sm" onClick={handleViewWork}>View my work</button>
+              <button className="btn btn-sm btn-hover" onClick={handleViewWork}>View my work</button>
             </div>
             {/* image */}
-            <div className="group relative overflow-hidden dark:border-2 dark:border-white rounded-xl">
+            <div className="group relative overflow-hidden rounded-xl">
               {/* overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
@@ -66,7 +79,7 @@ export default function Work({handleViewWork}) {
           viewport={{ once: false, amount: 0.3 }}
           className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[8rem]">
             {/* image */}
-            <div className="group relative overflow-hidden dark:border-2 dark:border-white rounded-xl">
+            <div className="group relative overflow-hidden rounded-xl">
               {/* overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
@@ -85,7 +98,7 @@ export default function Work({handleViewWork}) {
               </div>
             </div>
              {/* image */}
-             <div className="group relative overflow-hidden dark:border-2 dark:border-white rounded-xl">
+             <div className="group relative overflow-hidden rounded-xl">
               {/* overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}

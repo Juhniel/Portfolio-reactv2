@@ -77,24 +77,7 @@ export default function Banner() {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <button class="btn-custom">
-      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 160 45">
-        <rect
-          x="2"
-          y="2"
-          rx="6"
-          ry="6"
-          width="156"
-          height="41"
-          stroke-width="2"
-          stroke-dasharray="422, 0"
-          stroke-dashoffset="0"
-          fill="none"
-          stroke="white"
-        ></rect>
-      </svg>
-      <span class="relative z-10">Button 1</span>
-    </button>
+              <button className="btn btn-lg btn-hover animate-bounce">Contact me</button>
             </motion.div>
             {/* Socials */}
             <motion.div
@@ -105,13 +88,13 @@ export default function Banner() {
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
               <a href="#">
-                <FaFacebook className="text-black dark:text-white" />
+                <FaFacebook className="text btn-hover" />
               </a>
               <a href="#">
-                <FaGithub className="text-black dark:text-white" />
+                <FaGithub className="text btn-hover" />
               </a>
               <a href="#">
-                <FaLinkedinIn className="text-black dark:text-white" />
+                <FaLinkedinIn className="text btn-hover" />
               </a>
             </motion.div>
           </div>

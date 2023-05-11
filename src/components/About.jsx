@@ -118,7 +118,7 @@ export default function About() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] xl:text-[68px] font-thin"
+              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] xl:text-[68px] font-thin btn-hover-rainbow"
             >
               <h3>
                 {graduation.map((letter, index) => {
@@ -217,7 +217,7 @@ export default function About() {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center"
             >
-              <button className="btn btn-lg">Experience</button>
+              <button className="btn btn-lg btn-hover">Experience</button>
             </motion.div>
           </motion.div>
         </div>

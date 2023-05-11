@@ -8,7 +8,7 @@ import TextAnimation2 from "./TextAnimationFishEye";
 export default function Contact() {
   const contactTitle = "Let's work".split("");
   const together = "together!".split("");
-  const test = "Send Message".split("");
+  const sendMsg = "Send Message".split("");
 
   return (
     <section id="contact" className="section mt-52">
@@ -50,11 +50,11 @@ export default function Contact() {
               placeholder="Your email"
             />
             <textarea
-              className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all resize-none mb-12"
+              className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all resize-none mb-5"
               placeholder="Your message"
             ></textarea>
-            <button className="btn btn-sm text-base">
-              {test.map((letter, index) => {
+            <button className="btn btn-sm btn-hover text-base">
+              {sendMsg.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>
                     {letter === " " ? "\u00A0" : letter}

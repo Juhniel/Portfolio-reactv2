@@ -51,7 +51,7 @@ export default function ProductCard() {
         </p>
         <a
           href=""
-          className="text-secondary tracking-widest font-bold  text-black dark:text-white flex justify-center mb-4"
+          className="text-secondary btn-hover tracking-widest font-bold  text-black dark:text-white flex justify-center mb-4"
         >
           Link to project
           <span className="ml-2 text-2xl">

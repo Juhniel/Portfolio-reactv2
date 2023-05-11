@@ -58,15 +58,15 @@ export default function Experience() {
                 );
               })}
             </motion.h1>
-            <h3 className="text max-w[455px] mb-16">
+            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-16">
               I am currently studying to become a software developer.
               My interest in development started in 2022 when I 
-              decided to give <span className="font-semibold">Java</span> a try.
+              decided to give <span className="tracking-wider font-semibold">Java</span> a try.
               Fast-forward to today, I started school, met awesome new
               people and fell in love with programming and web development.
             </h3>
-            <button className="btn btn-sm ">Download CV</button>
-            <button className="btn btn-sm ml-3">Portfolio</button>
+            <button className="btn btn-sm btn-hover">Download CV</button>
+            <button className="btn btn-sm btn-hover ml-3">Portfolio</button>
             
           </motion.div>
           {/* experience */}
