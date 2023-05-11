@@ -1,0 +1,34 @@
+{
+    "projects": [
+      {
+        "name": "Project 1",
+        "description": "This is the description for Project 1.",
+        "link": "https://www.example.com/project1",
+        "stack": [
+          "technology1",
+          "technology2",
+          "technology3"
+        ]
+      },
+      {
+        "name": "Project 2",
+        "description": "This is the description for Project 2.",
+        "link": "https://www.example.com/project2",
+        "stack": [
+          "technology1",
+          "technology2",
+          "technology3"
+        ]
+      },
+      {
+        "name": "Project 3",
+        "description": "This is the description for Project 3.",
+        "link": "https://www.example.com/project3",
+        "stack": [
+          "technology1",
+          "technology2",
+          "technology3"
+        ]
+      }
+    ]
+  }
