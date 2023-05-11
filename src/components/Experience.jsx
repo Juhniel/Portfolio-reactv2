@@ -1,6 +1,4 @@
 import React from "react";
-
-import { BsArrowUpRight, BsArrowRightShort } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
@@ -50,7 +48,7 @@ export default function Experience() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[55px] font-primary mb-14 font-light leading-[0.8] lg:text-[110px] text-black dark:text-white"
+              className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10"
             >
               {experienceTitle.map((letter, index) => {
                 return (
@@ -80,12 +78,12 @@ export default function Experience() {
             className="flex-1"
           >
             {/* experience list */}
-            <div className="text mt-8">
+            <div className="text mt-8 h-30">
               {experience.map((experience, index) => {
                 const { name, description, title, date, place } = experience;
                 return (
                   <div
-                    className="border-b border-black/20 dark:border-white/20 mb-14 lg:h-[200px] flex"
+                    className="border-b border-black/20 dark:border-white/20 mb-14 lg:h-[240px] xl:h-[200px] flex"
                     key={index}
                   >
                     <div className="max-w-[476px]">
@@ -102,15 +100,6 @@ export default function Experience() {
                     <div className="flex flex-col flex-1 items-end whitespace-nowrap">
                       <p className="text">{date}</p>
                       <p className="text">{place}</p>
-                      {/* <a
-                        href="#"
-                        className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
-                      >
-                        <BsArrowUpRight />
-                      </a>
-                      <a href="#" className="text-sm">
-                        {link}
-                      </a> */}
                     </div>
                   </div>
                 );

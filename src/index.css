@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-custom {
+  @apply font-primary text-white font-light py-0 px-8 relative transition-colors duration-200 ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: transparent;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.btn-custom:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .active {
   background-color: #444c4ffe;
 }
@@ -30,7 +47,7 @@ span {
     @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
   }
   .btn {
-    @apply border-2 font-primary text-black border-black dark:border-white dark:text-white font-medium ;
+    @apply border-2 font-primary text-black border-black dark:border-white dark:text-white font-medium;
   }
   .btn-sm {
     @apply h-[48px] px-6 text-sm;

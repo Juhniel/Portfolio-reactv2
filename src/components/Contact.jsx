@@ -1,8 +1,15 @@
 import React from "react";
 
 import {motion} from "framer-motion";
+import { fadeIn } from "../variants";
+import TextAnimation1 from "./TextAnimation";
+import TextAnimation2 from "./TextAnimationFishEye";
 
 export default function Contact() {
+  const contactTitle = "Let's work".split("");
+  const together = "together!".split("");
+  const test = "Send Message".split("");
+
   return (
     <section id="contact" className="section mt-52">
       <div className="container mx-auto">
@@ -10,11 +17,22 @@ export default function Contact() {
           {/* text */}
           <motion.div className="flex-1 flex justify-start items-center">
             <div>
-            <h4 className="text text-xl uppercase mb-2 tracking-wide mb-2">
-              Get in touch
-            </h4>
-            <h2 className="text text-[45px] lg:text-[90px] leading-none mb-12">
-              Let's work <br /> together!
+            <h2 className="text text-[60px] lg:text-[90px] xl:text-[110px] leading-none mb-14 lg:mb-40 xl:mb-48">
+            {contactTitle.map((letter, index) => {
+                return (
+                  <TextAnimation1 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation1>
+                );
+              })}
+              <br /> 
+              {together.map((letter, index) => {
+                return (
+                  <TextAnimation1 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation1>
+                );
+              })}
             </h2>
             </div>
           </motion.div>
@@ -35,7 +53,14 @@ export default function Contact() {
               className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all resize-none mb-12"
               placeholder="Your message"
             ></textarea>
-            <button className="btn btn-sm">Send message</button>
+            <button className="btn btn-sm text-base">
+              {test.map((letter, index) => {
+                return (
+                  <TextAnimation2 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation2>
+                );
+              })}</button>
           </form>
         </div>
       </div>

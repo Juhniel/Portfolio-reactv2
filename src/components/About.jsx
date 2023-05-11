@@ -67,7 +67,7 @@ export default function About() {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 text-black dark:text-white"
           >
-            <h1 className="text-[55px] font-primary mb-2 font-light leading-[0.8] lg:text-[110px] text-black dark:text-white">
+            <h1 className="text-[55px] font-primary mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white">
               {title.map((letter, index) => {
                 return (
                   <TextAnimation key={index}>
@@ -76,7 +76,7 @@ export default function About() {
                 );
               })}
             </h1>
-            <div className="mb-4 ml-6 text-[36px] lg:text-[60px] font-secondary font-semibold  leading-[1]">
+            <div className="mb-4 ml-6 text-[36px] lg:text-[40px] xl:text-[60px] font-secondary font-semibold  leading-[1]">
               <span className="mr-2 font-tertiary text-black dark:text-white">
                 I am
               </span>
@@ -118,7 +118,7 @@ export default function About() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] lg:text-[68px] font-thin"
+              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] xl:text-[68px] font-thin"
             >
               <h3>
                 {graduation.map((letter, index) => {

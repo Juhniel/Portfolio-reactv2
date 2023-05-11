@@ -22,7 +22,8 @@ export default function Banner() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[55px] mb-2 font-light leading-[0.8] lg:text-[110px] text-black dark:text-white"
+              className="text-[55px] mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white"
+              
             >
               {name.map((letter, index) => {
                 return (
@@ -37,9 +38,9 @@ export default function Banner() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-4 ml-6 text-[36px] lg:text-[60px] font-secondary font-semibold  leading-[1]"
+              className="mb-4 ml-6 text-[36px] lg:text-[40px] xl:text-[60px] font-secondary font-semibold  leading-[1]"
             >
-              <span className="mr-2 font-tertiary text-black dark:text-white">
+              <span className="mr-2 text">
                 I'm a
               </span>
 
@@ -55,7 +56,7 @@ export default function Banner() {
                   2000,
                 ]}
                 speed={30}
-                className="text-black font-tertiary dark:text-white"
+                className="text"
                 wrapper="span"
                 repeat={Infinity}
               />
@@ -76,7 +77,24 @@ export default function Banner() {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <button className="btn btn-lg">Contact me</button>
+              <button class="btn-custom">
+      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 160 45">
+        <rect
+          x="2"
+          y="2"
+          rx="6"
+          ry="6"
+          width="156"
+          height="41"
+          stroke-width="2"
+          stroke-dasharray="422, 0"
+          stroke-dashoffset="0"
+          fill="none"
+          stroke="white"
+        ></rect>
+      </svg>
+      <span class="relative z-10">Button 1</span>
+    </button>
             </motion.div>
             {/* Socials */}
             <motion.div

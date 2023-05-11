@@ -22,12 +22,13 @@ export default function Work({handleViewWork}) {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="flex-1 flex flex-col gap-y-10 mb-10 lg:mb-0">
+          className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[4.7rem] xl:mt-[4.7rem]">
             {/* text */}
             <div>
-              <h2 className="h2 leading-tight text">
+              <h2 className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10">
               My Latest <br/>
-              Work. 
+              <span className="mt-4">Work</span>
+              
               </h2>
               <p className="max-w-sm mb-16 text">
                 Lorem ipsum dolor sit amet consectetur, 
