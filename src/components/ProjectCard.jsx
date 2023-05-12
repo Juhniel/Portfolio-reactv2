@@ -15,6 +15,8 @@ import {
   SiGithub,
   SiCss3,
   SiPostgresql,
+  SiApachetomcat,
+  SiFirebase
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 export default function ProductCard({ project }) {
@@ -23,7 +25,7 @@ export default function ProductCard({ project }) {
       case "Spring":
         return <SiSpring className="text px-2 text-[45px] hover:text-[#6DB33F] transition-colors duration-300" />;
       case "mySQL":
-        return <SiMysql className="text px-2 text-[45px]  hover:text-[#4479A1] transition-colors duration-300" />;
+        return <SiMysql className="text px-2 text-[60px] pt-4 hover:text-[#4479A1] transition-colors duration-300" />;
       case "Java":
         return <FaJava className="text px-2 text-[45px]  hover:text-[#5382a1] transition-colors duration-300" />;
       case "JavaScript":
@@ -36,6 +38,10 @@ export default function ProductCard({ project }) {
         return <SiHtml5 className="text px-2 text-[45px]  hover:text-[#E34F26] transition-colors duration-300" />;
       case "CSS":
         return <SiCss3 className="text px-2 text-[45px]  hover:text-[#1572B6] transition-colors duration-300" />;
+      case "Tomcat":
+      return <SiApachetomcat className="text px-2 text-[50px] pt-3 hover:text-[#F8DC75] transition-colors duration-300" />;
+      case "Firebase":
+      return <SiFirebase className="text px-2 text-[45px]  hover:text-[#FFCA28] transition-colors duration-300" />
 
       default:
         return null;
@@ -82,7 +88,7 @@ export default function ProductCard({ project }) {
         <a
           href={project.link}
           target="_blank"
-          className="text-secondary btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center mb-4"
+          className="text-secondary text-xl btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center m-5"
         >
           Link to project
           <span className="ml-2 text-2xl text-black dark:text-white">

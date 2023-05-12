@@ -3,7 +3,7 @@
       {
         "name": "Recipebook",
         "description": "Spring boot project backed by mySQL. This application allows users to search, discover and save their favourite recipes. Personalized account creation and profile editing options.",
-        "img": "",
+        "img": "recipebook",
         "link": "https://github.com/Juhniel/RecipeBookSpring",
         "category": "web",
         "stack": [
@@ -16,19 +16,20 @@
       {
         "name": "Webshop",
         "description": "This is the description for Project 2.",
-        "img": "",
+        "img": "webshop",
         "link": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
           "JavaScript",
           "React",
-          "HTML"
+          "HTML",
+          "Firebase"
         ]
       },
       {
         "name": "Portfolio v1",
         "description": "This is the description for Project 3.",
-        "img": "",
+        "img": "portfoliov1",
         "link": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
@@ -40,7 +41,7 @@
       {
         "name": "Flickr",
         "description": "This is the description for Project 3.",
-        "img": "",
+        "img": "flickr",
         "link": "https://github.com/Juhniel/java22-js-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
@@ -52,19 +53,18 @@
       {
         "name": "Weather Website",
         "description": "This is the description for Project 3.",
-        "img": "",
+        "img": "weather",
         "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
         "category": "web",
         "stack": [
           "Java",
-          "Servlets",
-          "Apache Tomcat"
+          "Tomcat"
         ]
       },
       {
         "name": "Calendar",
         "description": "This is the description for Project 3.",
-        "img": "",
+        "img": "calendar",
         "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
         "category": "desktop",
         "stack": [
