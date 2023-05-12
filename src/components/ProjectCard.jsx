@@ -2,6 +2,9 @@ import React from "react"
 import recipebook from "../assets/project-recipebook.png";
 import portfoliov1 from "../assets/project-portfoliov1.png";
 import webshop from "../assets/project-webshop.png";
+import java from "../assets/java.png";
+import spring from "../assets/spring.png";
+import javascript from "../assets/javascript.png";
 
 import { motion } from "framer-motion";
 import { fadeIn, fadeOut } from "../variants";
@@ -23,12 +26,23 @@ import {
 import { FaJava } from "react-icons/fa";
 
 export default function ProductCard({ project }) {
+
+  const images = {
+    "recipebook": recipebook,
+    "webshop": webshop,
+    "portfoliov1": portfoliov1,
+    "java": java,
+    "javascript": javascript,
+    "spring": spring,
+    // Add more mappings as needed
+  };
+
   function getTechnologyIcon(technology) {
     switch (technology) {
       case "Spring":
         return <SiSpring className="text px-2 text-[45px] hover:text-[#6DB33F] transition-colors duration-300" />;
       case "mySQL":
-        return <SiMysql className="text px-2 text-[60px] pt-4 hover:text-[#4479A1] transition-colors duration-300" />;
+        return <SiMysql className="text px-2 text-[55px] pt-3 h-34 hover:text-[#4479A1] transition-colors duration-300" />;
       case "Java":
         return <FaJava className="text px-2 text-[45px]  hover:text-[#5382a1] transition-colors duration-300" />;
       case "JavaScript":
@@ -53,13 +67,13 @@ export default function ProductCard({ project }) {
   }
 
   return (
-    <div className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden">
+    <div className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-full flex flex-col">
       {/* Image container */}
       <div className="group relative h-62">
         {/* Image */}
         <img
           className="w-full h-full object-cover group-hover:scale-125 transition-all duration-500"
-          src={project.img}
+          src={images[project.img]}
           alt="project image"
         />
         {/* Overlay */}
@@ -85,27 +99,27 @@ export default function ProductCard({ project }) {
 
       {/* Card content */}
 
-      <div className="mt-10">
-        <p className="text-secondary font-medium text-black dark:text-white mb-6">
-          {project.description}
-        </p>
-        <a
-          href={project.link}
-          target="_blank"
-          className="text-secondary text-xl btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center m-5"
-        >
-          Link to project
-          <span className="ml-2 text-2xl text-black dark:text-white">
-            <SiGithub />
-          </span>
-        </a>
+      <div className="mt-10 flex-grow flex flex-col">
+      <p className="text-secondary font-medium text-black dark:text-white flex-grow mb-4">
+        {project.description}
+      </p>
+      <a
+        href={project.link}
+        target="_blank"
+        className="text-secondary text-xl btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center mb-12"
+      >
+        Link to project
+        <span className="ml-2 text-2xl text-black dark:text-white">
+          <SiGithub />
+        </span>
+      </a>
 
-        <div className="flex justify-around text px-2 items-end">
-          {project.stack.map((tech, index) => (
-            <React.Fragment key={index}>
-              {getTechnologyIcon(tech)}
-            </React.Fragment>
-          ))}
+      <div className="flex justify-around text px-2 pb-5 items-end">
+        {project.stack.map((tech, index) => (
+          <React.Fragment key={index}>
+            {getTechnologyIcon(tech)}
+          </React.Fragment>
+        ))}
         </div>
       </div>
     </div>

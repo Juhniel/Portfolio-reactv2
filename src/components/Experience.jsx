@@ -36,8 +36,8 @@ export default function Experience() {
   const portfolio = "Portfolio".split("");
 
   return (
-    <section id="experience" className="section">
-      <div className="container mx-auto mt-20">
+    <section id="experience" className="section lg:mb-96">
+      <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text & image*/}
           <motion.div
