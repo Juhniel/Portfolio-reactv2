@@ -1,33 +1,69 @@
 {
     "projects": [
       {
-        "name": "Project 1",
+        "name": "Recipebook",
         "description": "This is the description for Project 1.",
-        "link": "https://www.example.com/project1",
+        "link": "https://github.com/Juhniel/RecipeBookSpring",
+        "category": "web",
         "stack": [
-          "technology1",
-          "technology2",
-          "technology3"
+          "Spring",
+          "mySQL",
+          "Java",
+          "JavaScript"
         ]
       },
       {
-        "name": "Project 2",
+        "name": "Webshop",
         "description": "This is the description for Project 2.",
-        "link": "https://www.example.com/project2",
+        "link": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
+        "category": "web",
         "stack": [
-          "technology1",
-          "technology2",
-          "technology3"
+          "JavaScript",
+          "React",
+          "HTML"
         ]
       },
       {
-        "name": "Project 3",
+        "name": "Portfolio v1",
         "description": "This is the description for Project 3.",
-        "link": "https://www.example.com/project3",
+        "link": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
+        "category": "web",
         "stack": [
-          "technology1",
-          "technology2",
-          "technology3"
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ]
+      },
+      {
+        "name": "Flickr",
+        "description": "This is the description for Project 3.",
+        "link": "https://github.com/Juhniel/java22-js-slutprojekt-Juhn-Kim",
+        "category": "web",
+        "stack": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ]
+      },
+      {
+        "name": "Weather Website",
+        "description": "This is the description for Project 3.",
+        "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
+        "category": "web",
+        "stack": [
+          "Java",
+          "Servlets",
+          "Apache Tomcat"
+        ]
+      },
+      {
+        "name": "Calendar",
+        "description": "This is the description for Project 3.",
+        "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
+        "category": "desktop",
+        "stack": [
+          "Java",
+          "Swing"
         ]
       }
     ]

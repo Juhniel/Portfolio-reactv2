@@ -10,10 +10,11 @@ import Img3 from "../assets/project-webshop.png";
 
 
 
-export default function Work({handleViewWork}) {
+export default function Work({handleViewAllProjects}) {
   const myLatest = "My Latest".split("");
   const work = "Work".split("");
   const viewMyWork = "View my work".split("");
+  
   return (
     <section
     className="section"
@@ -51,7 +52,7 @@ export default function Work({handleViewWork}) {
               where I showcase my skills in development, web-development and design. <br/> These works demonstrate my passion for creating 
               innovative solutions and my commitment to continuous learning and improvement.
               </p>
-              <button className="btn btn-sm btn-hover text-base" onClick={handleViewWork}>
+              <button className="btn btn-sm btn-hover text-base" onClick={handleViewAllProjects}>
               {viewMyWork.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>

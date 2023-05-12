@@ -32,10 +32,17 @@ export default function App() {
     }
   }, [theme]);
 
-  function handleViewWork(){
+  function handleViewAllProjects(){
     setShowWork(false);
     setTimeout(() => {
       setShowAnotherComponent(true);
+    }, 1000); // Adjust the timeout according to your exit animation duration
+  }
+
+  function handleViewWork() {
+    setShowAnotherComponent(false);
+    setTimeout(() => {
+      setShowWork(true);
     }, 1000); // Adjust the timeout according to your exit animation duration
   }
 
@@ -47,8 +54,10 @@ export default function App() {
     <About />
     <Experience />
     <AnimatePresence>
-    {showWork && <Work handleViewWork={handleViewWork} />}
+    {showWork && <Work handleViewAllProjects={handleViewAllProjects} />}
     {showAnotherComponent && <AllProjects />}
+
+    {showAnotherComponent && <AllProjects handleViewWork={handleViewWork} />}
   </AnimatePresence>
     
     <Contact />
