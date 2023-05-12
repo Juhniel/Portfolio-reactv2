@@ -4,9 +4,9 @@ import { motion, AnimatePresence} from "framer-motion";
 import TextAnimation from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
 import { fadeIn, fadeOut } from "../variants";
-import Img1 from "../assets/project-recipebook.png";
-import Img2 from "../assets/project-portfoliov1.png";
-import Img3 from "../assets/project-webshop.png";
+import recipebook from "../assets/project-recipebook.png";
+import portfoliov1 from "../assets/project-portfoliov1.png";
+import webshop from "../assets/project-webshop.png";
 
 
 
@@ -69,7 +69,7 @@ export default function Work({handleViewAllProjects}) {
               {/* img */}
               <img 
               className="group-hover:scale-125 transition-all duration-500" 
-              src={Img1} 
+              src={recipebook} 
               alt="" 
               />
               {/* pretitle */}
@@ -96,7 +96,7 @@ export default function Work({handleViewAllProjects}) {
               {/* img */}
               <img 
               className="group-hover:scale-125 transition-all duration-500" 
-              src={Img2} 
+              src={portfoliov1} 
               alt="" 
               />
               {/* pretitle */}
@@ -115,7 +115,7 @@ export default function Work({handleViewAllProjects}) {
               {/* img */}
               <img 
               className="group-hover:scale-125 transition-all duration-500" 
-              src={Img3} 
+              src={webshop} 
               alt="" 
               />
               {/* pretitle */}

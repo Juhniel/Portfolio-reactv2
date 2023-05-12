@@ -1,7 +1,7 @@
 import React from "react"
-import Img1 from "../assets/project-recipebook.png";
-import Img2 from "../assets/project-portfoliov1.png";
-import Img3 from "../assets/project-webshop.png";
+import recipebook from "../assets/project-recipebook.png";
+import portfoliov1 from "../assets/project-portfoliov1.png";
+import webshop from "../assets/project-webshop.png";
 
 import { motion } from "framer-motion";
 import { fadeIn, fadeOut } from "../variants";
@@ -16,9 +16,12 @@ import {
   SiCss3,
   SiPostgresql,
   SiApachetomcat,
-  SiFirebase
+  SiFirebase,
+  SiTailwindcss
 } from "react-icons/si";
+
 import { FaJava } from "react-icons/fa";
+
 export default function ProductCard({ project }) {
   function getTechnologyIcon(technology) {
     switch (technology) {
@@ -42,7 +45,8 @@ export default function ProductCard({ project }) {
       return <SiApachetomcat className="text px-2 text-[50px] pt-3 hover:text-[#F8DC75] transition-colors duration-300" />;
       case "Firebase":
       return <SiFirebase className="text px-2 text-[45px]  hover:text-[#FFCA28] transition-colors duration-300" />
-
+      case "Tailwind":
+      return <SiTailwindcss className="text px-2 text-[45px]  hover:text-[#06B6D4] transition-colors duration-300" />
       default:
         return null;
     }
@@ -55,8 +59,8 @@ export default function ProductCard({ project }) {
         {/* Image */}
         <img
           className="w-full h-full object-cover group-hover:scale-125 transition-all duration-500"
-          src={Img1}
-          alt=""
+          src={project.img}
+          alt="project image"
         />
         {/* Overlay */}
         <div className="group-hover:bg-black/70 group-hover:scale-125 w-full h-full top-0 absolute z-80 transition-all duration-300"></div>

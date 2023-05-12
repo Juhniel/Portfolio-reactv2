@@ -15,20 +15,20 @@
       },
       {
         "name": "Webshop",
-        "description": "This is the description for Project 2.",
+        "description": "React project backed by Firebase real-time database. Simple webshop styled with tailwind. As a user you are able to add products to the cart and purchase products.",
         "img": "webshop",
         "link": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
           "JavaScript",
           "React",
-          "HTML",
+          "Tailwind",
           "Firebase"
         ]
       },
       {
         "name": "Portfolio v1",
-        "description": "This is the description for Project 3.",
+        "description": "This was one of my first projects ever created which showcase a portfolio of my work. ",
         "img": "portfoliov1",
         "link": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
         "category": "web",
@@ -40,7 +40,7 @@
       },
       {
         "name": "Flickr",
-        "description": "This is the description for Project 3.",
+        "description": "This project is a flickr clone which is a image service where you can upload and see other people's images. Flickr's own API and search functions with filter.",
         "img": "flickr",
         "link": "https://github.com/Juhniel/java22-js-slutprojekt-Juhn-Kim",
         "category": "web",
@@ -52,7 +52,7 @@
       },
       {
         "name": "Weather Website",
-        "description": "This is the description for Project 3.",
+        "description": "Weather web-application created in Java with Apache Tomcat as webserver. We used JSP to show the data on a static website and fetched data from https://openweathermap.org. User can search for any country and get the weather report from each country.",
         "img": "weather",
         "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
         "category": "web",
@@ -63,7 +63,7 @@
       },
       {
         "name": "Calendar",
-        "description": "This is the description for Project 3.",
+        "description": "Desktop-application made with Java and Swing. Simple week-calendar where the user can add and remove events on the calendar. ",
         "img": "calendar",
         "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
         "category": "desktop",
