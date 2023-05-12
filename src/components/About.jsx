@@ -7,6 +7,7 @@ import { fadeIn } from "../variants";
 import { TypeAnimation } from "react-type-animation";
 
 import TextAnimation from "./TextAnimation";
+import TextAnimation2 from "./TextAnimationFishEye";
 
 export default function About() {
   const title = "About me".split("");
@@ -15,6 +16,7 @@ export default function About() {
   const minutes = "minutes".split("");
   const seconds = "seconds".split("");
   const graduation = "Graduation".split("");
+  const experience = "Experience".split("");
 
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -28,16 +30,16 @@ export default function About() {
       } else {
         switch (unit) {
           case "days":
-            return <span className="text-black dark:text-white">{days}</span>;
+            return <span className="text">{days}</span>;
           case "hours":
-            return <span className="text-black dark:text-white">{hours}</span>;
+            return <span className="text">{hours}</span>;
           case "minutes":
             return (
-              <span className="text-black dark:text-white">{minutes}</span>
+              <span className="text">{minutes}</span>
             );
           case "seconds":
             return (
-              <span className="text-black dark:text-white">{seconds}</span>
+              <span className="text">{seconds}</span>
             );
           default:
             return null;
@@ -57,7 +59,7 @@ export default function About() {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 bg-about bg-contain bg-no-repeat hidden lg:block lg:h-[480px] bg-top rounded-full duration-300 grayscale hover:grayscale-0"
+            className="flex-1 bg-about bg-contain bg-no-repeat hidden lg:block lg:h-[480px] bg-top rounded-full duration-700 grayscale hover:grayscale-0"
           ></motion.div>
           {/* text */}
           <motion.div
@@ -98,7 +100,7 @@ export default function About() {
                   2000,
                 ]}
                 speed={30}
-                className="text-black font-primary dark:text-white"
+                className="text"
                 wrapper="span"
                 repeat={Infinity}
               />
@@ -137,7 +139,7 @@ export default function About() {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center mt-14 gap-x-8 lg:gap-x-10 mb-12"
             >
-              <div>
+              <div className="btn-hover-light-blue">
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -155,7 +157,7 @@ export default function About() {
                   })}
                 </div>
               </div>
-              <div>
+              <div className="btn-hover-blue">
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -173,8 +175,8 @@ export default function About() {
                   })}
                 </div>
               </div>
-              <div>
-                <div className="text-[40px] mb-2 font-primary text-amber-400 dark:text-yellow-300">
+              <div className="btn-hover-indigo">
+                <div className="text text-[40px] mb-2">
                   <CountDown
                     date={graduationDate}
                     renderer={unitRenderer("minutes")}
@@ -191,7 +193,7 @@ export default function About() {
                   })}
                 </div>
               </div>
-              <div>
+              <div className="btn-hover-violet">
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -217,7 +219,15 @@ export default function About() {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center"
             >
-              <button className="btn btn-lg btn-hover">Experience</button>
+              <button className="btn btn-lg btn-hover">
+              {experience.map((letter, index) => {
+                return (
+                  <TextAnimation2 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation2>
+                );
+              })}
+              </button>
             </motion.div>
           </motion.div>
         </div>

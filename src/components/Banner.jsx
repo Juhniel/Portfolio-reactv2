@@ -5,9 +5,11 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
+import TextAnimation2 from "./TextAnimationFishEye";
 
 export default function Banner() {
   const name = "Juhn Kim".split("");
+  const contactMe = "Contact Me".split("");
   return (
     <section
       id="home"
@@ -23,7 +25,6 @@ export default function Banner() {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
               className="text-[55px] mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white"
-              
             >
               {name.map((letter, index) => {
                 return (
@@ -40,9 +41,7 @@ export default function Banner() {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-4 ml-6 text-[36px] lg:text-[40px] xl:text-[60px] font-secondary font-semibold  leading-[1]"
             >
-              <span className="mr-2 text">
-                I'm a
-              </span>
+              <span className="mr-2 text">I'm a</span>
 
               <TypeAnimation
                 sequence={[
@@ -77,7 +76,15 @@ export default function Banner() {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <button className="btn btn-lg btn-hover animate-bounce">Contact me</button>
+              <button className="btn btn-lg btn-hover animate-bounce text-base">
+                {contactMe.map((letter, index) => {
+                  return (
+                    <TextAnimation2 key={index}>
+                      {letter === " " ? "\u00A0" : letter}
+                    </TextAnimation2>
+                  );
+                })}
+              </button>
             </motion.div>
             {/* Socials */}
             <motion.div
@@ -107,7 +114,7 @@ export default function Banner() {
           >
             <img
               src={Selfie}
-              className="w-[400px] rounded-2xl filter transition-all duration-300 grayscale hover:grayscale-0 "
+              className="w-[400px] rounded-2xl filter transition-all duration-700 grayscale hover:grayscale-0 "
               alt=""
             />
           </motion.div>

@@ -2,6 +2,7 @@ import React from "react";
 
 import { motion, AnimatePresence} from "framer-motion";
 import TextAnimation from "./TextAnimation";
+import TextAnimation2 from "./TextAnimationFishEye";
 import { fadeIn, fadeOut } from "../variants";
 import Img1 from "../assets/project-recipebook.png";
 import Img2 from "../assets/project-portfoliov1.png";
@@ -12,6 +13,7 @@ import Img3 from "../assets/project-webshop.png";
 export default function Work({handleViewWork}) {
   const myLatest = "My Latest".split("");
   const work = "Work".split("");
+  const viewMyWork = "View my work".split("");
   return (
     <section
     className="section"
@@ -49,7 +51,15 @@ export default function Work({handleViewWork}) {
               where I showcase my skills in development, web-development and design. <br/> These works demonstrate my passion for creating 
               innovative solutions and my commitment to continuous learning and improvement.
               </p>
-              <button className="btn btn-sm btn-hover" onClick={handleViewWork}>View my work</button>
+              <button className="btn btn-sm btn-hover text-base" onClick={handleViewWork}>
+              {viewMyWork.map((letter, index) => {
+                return (
+                  <TextAnimation2 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation2>
+                );
+              })}
+              </button>
             </div>
             {/* image */}
             <div className="group relative overflow-hidden rounded-xl">

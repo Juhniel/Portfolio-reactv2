@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
+import TextAnimation2 from "./TextAnimationFishEye";
 
 
 const experience = [
@@ -29,7 +30,9 @@ const experience = [
 ];
 
 export default function Experience() {
-  const experienceTitle = "Experience".split("")
+  const experienceTitle = "Experience".split("");
+  const download = "Download CV".split("");
+  const portfolio = "Portfolio".split("");
 
   return (
     <section id="experience" className="section">
@@ -58,15 +61,27 @@ export default function Experience() {
                 );
               })}
             </motion.h1>
-            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-16">
-              I am currently studying to become a software developer.
-              My interest in development started in 2022 when I 
-              decided to give <span className="tracking-wider font-semibold">Java</span> a try.
-              Fast-forward to today, I started school, met awesome new
-              people and fell in love with programming and web development.
+            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-12">
+             I have been programming since July 2022. 
             </h3>
-            <button className="btn btn-sm btn-hover">Download CV</button>
-            <button className="btn btn-sm btn-hover ml-3">Portfolio</button>
+            <button className="btn btn-sm btn-hover text-base">
+            {download.map((letter, index) => {
+                return (
+                  <TextAnimation2 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation2>
+                );
+              })}
+            </button>
+            <button className="btn btn-sm btn-hover text-base ml-3">
+            {portfolio.map((letter, index) => {
+                return (
+                  <TextAnimation2 key={index}>
+                    {letter === " " ? "\u00A0" : letter}
+                  </TextAnimation2>
+                );
+              })}
+            </button>
             
           </motion.div>
           {/* experience */}
