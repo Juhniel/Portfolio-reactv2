@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, fadeOut } from "../variants";
+import projectData from "../data/projectData.json";
 import ProjectCard from "./ProjectCard";
 import TextAnimation from "./TextAnimation";
 
@@ -14,7 +15,7 @@ export default function AllProjects({handleViewWork}) {
       whileInView={"show"}
       viewport={{ once: false, amount: 0.3 }}
       id="work"
-      className="section"
+      className="section mt-96"
     >
       <div 
       className="container mx-auto">
@@ -85,7 +86,9 @@ export default function AllProjects({handleViewWork}) {
           </ul>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-          <ProjectCard />
+        {projectData.projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
         </div>
       </div>
     </motion.section>

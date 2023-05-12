@@ -56,18 +56,26 @@ export default function Contact() {
             <input
               className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all"
               type="text"
+              name="name"
               placeholder="Your name"
+              required
             />
             <input
               className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all"
-              type="text"
+              type="email"
+              name="email"
               placeholder="Your email"
+              required
             />
             <textarea
               className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all resize-none mb-5"
+              type="text"
+              name="message"
               placeholder="Your message"
+              required
             ></textarea>
-            <button className="btn btn-sm btn-hover text-base">
+            <button type="submit" 
+            className="btn btn-sm btn-hover text-base">
               {sendMsg.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>

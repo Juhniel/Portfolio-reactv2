@@ -2,7 +2,7 @@
     "projects": [
       {
         "name": "Recipebook",
-        "description": "This is the description for Project 1.",
+        "description": "Spring boot project backed by mySQL. This application allows users to search, discover and save their favourite recipes. Personalized account creation and profile editing options.",
         "img": "",
         "link": "https://github.com/Juhniel/RecipeBookSpring",
         "category": "web",
