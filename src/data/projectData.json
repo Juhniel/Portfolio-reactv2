@@ -3,6 +3,7 @@
       {
         "name": "Recipebook",
         "description": "This is the description for Project 1.",
+        "img": "",
         "link": "https://github.com/Juhniel/RecipeBookSpring",
         "category": "web",
         "stack": [
@@ -15,6 +16,7 @@
       {
         "name": "Webshop",
         "description": "This is the description for Project 2.",
+        "img": "",
         "link": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
@@ -26,6 +28,7 @@
       {
         "name": "Portfolio v1",
         "description": "This is the description for Project 3.",
+        "img": "",
         "link": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
@@ -37,6 +40,7 @@
       {
         "name": "Flickr",
         "description": "This is the description for Project 3.",
+        "img": "",
         "link": "https://github.com/Juhniel/java22-js-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
@@ -48,6 +52,7 @@
       {
         "name": "Weather Website",
         "description": "This is the description for Project 3.",
+        "img": "",
         "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
         "category": "web",
         "stack": [
@@ -59,6 +64,7 @@
       {
         "name": "Calendar",
         "description": "This is the description for Project 3.",
+        "img": "",
         "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
         "category": "desktop",
         "stack": [

@@ -1,4 +1,5 @@
 import React from "react";
+import cv from "../assets/cv.pdf";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
@@ -65,6 +66,7 @@ export default function Experience() {
              I have been programming since July 2022. 
             </h3>
             <button className="btn btn-sm btn-hover text-base">
+              <a href={cv} download>
             {download.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>
@@ -72,8 +74,10 @@ export default function Experience() {
                   </TextAnimation2>
                 );
               })}
+              </a>
             </button>
             <button className="btn btn-sm btn-hover text-base ml-3">
+              
             {portfolio.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>
@@ -81,6 +85,7 @@ export default function Experience() {
                   </TextAnimation2>
                 );
               })}
+        
             </button>
             
           </motion.div>

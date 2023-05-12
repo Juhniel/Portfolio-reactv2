@@ -54,10 +54,9 @@ export default function App() {
     <About />
     <Experience />
     <AnimatePresence>
-    {showWork && <Work handleViewAllProjects={handleViewAllProjects} />}
-    {showAnotherComponent && <AllProjects />}
+     {showWork && <Work handleViewAllProjects={handleViewAllProjects} />}
+      {showAnotherComponent && <AllProjects handleViewWork={handleViewWork} />}
 
-    {showAnotherComponent && <AllProjects handleViewWork={handleViewWork} />}
   </AnimatePresence>
     
     <Contact />

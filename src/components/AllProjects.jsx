@@ -9,13 +9,15 @@ export default function AllProjects({handleViewWork}) {
   return (
     <motion.section
       variants={fadeIn("right", 0.3)}
+      exit={fadeOut("left", 0).exit}
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.3 }}
       id="work"
       className="section"
     >
-      <div className="container mx-auto">
+      <div 
+      className="container mx-auto">
         {/* title */}
         <div className="">
           <div className="mb-8">

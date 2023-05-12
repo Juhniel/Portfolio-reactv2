@@ -1,7 +1,7 @@
 import React from "react";
 
-import {motion} from "framer-motion";
-import { fadeIn } from "../variants";
+import { motion } from "framer-motion";
+import { fadeIn, fadeOut } from "../variants";
 import TextAnimation1 from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
 
@@ -15,7 +15,13 @@ export default function Contact() {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}
-          <motion.div className="flex-1 flex justify-start items-center">
+          <motion.div 
+          variants={fadeIn("right", 0.5)}
+          exit={fadeOut("right", 0).exit}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex-1 flex justify-start items-center">
             <div>
             <h2 className="text text-[60px] lg:text-[90px] xl:text-[110px] leading-none mb-14 lg:mb-40 xl:mb-48">
             {contactTitle.map((letter, index) => {
@@ -38,7 +44,15 @@ export default function Contact() {
           </motion.div>
 
           {/* form */}
-          <form className="flex-1 flex flex-col gap-y-6 pb-24 p-6 items-start">
+          <motion.form 
+          variants={fadeIn("left", 0.5)}
+          exit={fadeOut("left", 0).exit}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          action="https://formsubmit.co/e6cfc893776581ce228c666ab181a78d" 
+          method="POST"
+          className="flex-1 flex flex-col gap-y-6 pb-24 p-6 items-start">
             <input
               className="text bg-transparent border-b py-3 outline-none w-full placeholder:text-black dark:placeholder:text-white focus:border-red transition-all"
               type="text"
@@ -61,7 +75,7 @@ export default function Contact() {
                   </TextAnimation2>
                 );
               })}</button>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>
