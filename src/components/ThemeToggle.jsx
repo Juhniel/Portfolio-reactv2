@@ -1,22 +1,52 @@
+import { useState, useEffect } from "react";
+import Switch from "react-switch";
 import { BsSun, BsMoonStars } from "react-icons/bs";
+import { FiSun, FiMoon } from "react-icons/fi";
 
-export default function ThemeToggle({ handleThemeDark, handleThemeLight, theme }) {
+export default function ThemeToggle() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = window.localStorage.getItem("darkMode") === "true";
+    setDarkMode(isDarkMode);
+  }, []);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      window.localStorage.setItem("darkMode", "true");
+    } else {
+      document.documentElement.classList.remove("dark");
+      window.localStorage.setItem("darkMode", "false");
+    }
+  }, [darkMode]);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const iconStyles = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    fontSize: 16,
+  };
+
   return (
-    <>
-    <button
-      onClick={handleThemeLight}
-    >
-      {theme === "light" ? <BsSun className="text-amber-400 w-8 text-[36px] m-2 dark:text-white hover:text-amber-600 dark:hover:text-amber-600"/> :  <BsSun className="text-amber-200 w-8 text-[36px] m-2  dark:text-white hover:text-yellow-400 dark:hover:text-yellow-400"/>}
-          
-         
-        
-    </button>
-    <button
-      onClick={handleThemeDark}
-    >
-      {theme === "dark" ? <BsMoonStars className="text-yellow-200 text-[28px] hover:text-yellow-400 dark:hover:text-yellow-400"/> : <BsMoonStars className="text-black dark:text-white text-[28px] hover:text-yellow-400 dark:hover:text-yellow-200"/>}
-    </button>
-        
-    </>
+    <Switch
+    checked={darkMode}
+    onChange={toggleTheme}
+    offColor="#f6ad55"
+    onColor="#4a5568"
+    handleDiameter={24}
+    uncheckedIcon={<div style={iconStyles}><FiSun /></div>}
+    checkedIcon={<div style={iconStyles}><FiMoon /></div>}
+    boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+    activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+    height={24}
+    width={60}
+    className="react-switch"
+  />
   );
 }

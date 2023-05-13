@@ -77,7 +77,7 @@ export default function ProductCard({ project }) {
       <div className="group relative h-62">
         {/* Image */}
         <img
-          className="w-full h-full object-cover group-hover:scale-125 transition-all duration-500"
+          className="w-full h-full lg:object-cover group-hover:scale-125 transition-all duration-500"
           src={images[project.img]}
           alt="project image"
         />
@@ -104,7 +104,7 @@ export default function ProductCard({ project }) {
 
       {/* Card content */}
 
-      <div className="mt-10 flex-grow flex flex-col">
+      <div className="mt-14 lg:mt-10 flex-grow flex flex-col">
       <p className="text-secondary font-medium text-black dark:text-white flex-grow mb-4">
         {project.description}
       </p>

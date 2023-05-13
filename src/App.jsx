@@ -8,27 +8,11 @@ import Experience from "./components/Experience";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import AllProjects from "./components/AllProjects";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
   const [showWork, setShowWork] = useState(true);
   const [showAnotherComponent, setShowAnotherComponent] = useState(false);
-
-  //  LIGHT / DARK - MODE
-  function handleThemeLight() {
-    setTheme("light");
-  }
-  function handleThemeDark() {
-    setTheme("dark");
-  }
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
 
   function handleSwitchComponent(component) {
     if (component === "Work") {
@@ -46,11 +30,8 @@ export default function App() {
 
   return (
     <div className="bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white">
-      <Header
-        handleThemeLight={handleThemeLight}
-        handleThemeDark={handleThemeDark}
-        theme={theme}
-      />
+      <Header />
+      <ThemeToggle />
       <Banner />
       <Nav />
       <About />

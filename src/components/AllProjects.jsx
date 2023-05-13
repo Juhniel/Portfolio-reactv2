@@ -56,7 +56,7 @@ export default function AllProjects({ handleSwitchComponent }) {
               <option value="mobile">Mobile Application</option>
             </select>
           </div>
-          <ul className="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
+          <ul className="hidden text-sm text font-bold text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
             <li className="w-full">
               <p
                 onClick={() => handleFilterChange("all")}
