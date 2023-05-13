@@ -67,7 +67,12 @@ export default function ProductCard({ project }) {
   }
 
   return (
-    <div className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-full flex flex-col">
+    <motion.div 
+    variants={fadeIn("left", 0.5)}
+    initial="hidden"
+    whileInView={"show"}
+    viewport={{ once: false, amount: 0.3 }}
+    className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-full flex flex-col">
       {/* Image container */}
       <div className="group relative h-62">
         {/* Image */}
@@ -122,6 +127,6 @@ export default function ProductCard({ project }) {
         ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

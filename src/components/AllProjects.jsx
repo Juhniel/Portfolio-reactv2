@@ -15,14 +15,15 @@ export default function AllProjects({ handleSwitchComponent }) {
 
   return (
     <section className="section">
-      <div 
-      variants={fadeIn("right", 0.3)}
-      exit={fadeOut("left", 0).exit}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.3 }}
-      id="work"
-      className="container mx-auto">
+      <div
+        variants={fadeIn("right", 0.3)}
+        exit={fadeOut("left", 0).exit}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.3 }}
+        id="work"
+        className="container mx-auto"
+      >
         {/* title */}
         <div>
           <div className="mb-8">
@@ -50,41 +51,57 @@ export default function AllProjects({ handleSwitchComponent }) {
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="all">All</option>
-              <option value="web">
-                Web Application
-              </option>
-              <option value="desktop">
-                Desktop Application
-              </option>
-              <option value="mobile">
-                Mobile Application
-              </option>
+              <option value="web">Web Application</option>
+              <option value="desktop">Desktop Application</option>
+              <option value="mobile">Mobile Application</option>
             </select>
           </div>
           <ul className="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
             <li className="w-full">
               <p
                 onClick={() => handleFilterChange("all")}
-                className="inline-block w-full p-4 text-gray-900 bg-gray-100 focus:ring-4 focus:ring-blue-300  focus:outline-none dark:bg-gray-700 dark:text-white"
+                className={`inline-block w-full p-4 ${
+                  selectedFilter === "all"
+                    ? "text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white"
+                    : "bg-white hover:text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                } focus:ring-4 focus:ring-blue-300 focus:outline-none`}
               >
                 All
               </p>
             </li>
             <li
-              onClick={() => handleFilterChange("desktop")}
               className="w-full"
+              onClick={() => handleFilterChange("desktop")}
             >
-              <p className="inline-block w-full p-4 bg-white hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">
+              <p
+                className={`inline-block w-full p-4 ${
+                  selectedFilter === "desktop"
+                    ? "text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white"
+                    : "bg-white hover:text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                } focus:ring-4 focus:ring-blue-300 focus:outline-none`}
+              >
                 Desktop Applications
               </p>
             </li>
-            <li onClick={() => handleFilterChange("mobile")} className="w-full">
-              <p className="inline-block w-full p-4 bg-white hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">
+            <li className="w-full" onClick={() => handleFilterChange("mobile")}>
+              <p
+                className={`inline-block w-full p-4 ${
+                  selectedFilter === "mobile"
+                    ? "text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white"
+                    : "bg-white hover:text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                } focus:ring-4 focus:ring-blue-300 focus:outline-none`}
+              >
                 Mobile Applications
               </p>
             </li>
-            <li onClick={() => handleFilterChange("web")} className="w-full">
-              <p className="inline-block w-full p-4 bg-white rounded-r-lg hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700">
+            <li className="w-full" onClick={() => handleFilterChange("web")}>
+              <p
+                className={`inline-block w-full p-4 ${
+                  selectedFilter === "web"
+                    ? "text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white"
+                    : "bg-white hover:text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                } focus:ring-4 focus:ring-blue-300 focus:outline-none rounded-r-lg`}
+              >
                 Web Applications
               </p>
             </li>
