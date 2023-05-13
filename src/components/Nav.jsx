@@ -1,64 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { BiHomeAlt, BiUser } from "react-icons/bi";
-import { BsClipboardData, BsBriefcase, BsChatSquareText } from "react-icons/bs";
-import { TbFileCertificate } from "react-icons/tb"
+import { BsBriefcase, BsChatSquareText } from "react-icons/bs";
+import { TbFileCertificate } from "react-icons/tb";
 
-import { Link } from "react-scroll";
 
 export default function Nav() {
+  const [activeLink, setActiveLink] = useState("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 } 
+    );
+
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
       <div className="container mx-auto">
         {/*  nav inner */}
         <div className="w-full bg-black/20 h-[96px] backdrop-blur-2xl rounded-full max-w-[460px] mx-auto px-5 flex justify-between items-center text-2xl text-white/50">
-          <Link
-            to="home"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            offset={-200}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+          <a
+            href="#home"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
+              activeLink === "home" ? "active" : ""
+            }`}
           >
             <BiHomeAlt />
-          </Link>
-          <Link
-            to="about"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+          </a>
+          <a
+            href="#about"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
+              activeLink === "about" ? "active" : ""
+            }`}
           >
             <BiUser />
-          </Link>
-          <Link
-            to="experience"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            
+          </a>
+          <a
+            href="#experience"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
+              activeLink === "experience" ? "active" : ""
+            }`}
           >
             <TbFileCertificate />
-          </Link>
-          <Link
-            to="work"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+          </a>
+          <a
+            href="#work"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
+              activeLink === "work" ? "active" : ""
+            }`}
           >
             <BsBriefcase />
-          </Link>
-          <Link
-            to="contact"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+          </a>
+          <a
+            href="#contact"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
+              activeLink === "contact" ? "active" : ""
+            }`}
           >
             <BsChatSquareText />
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

@@ -28,11 +28,18 @@ export default function App() {
     }
   }
 
+  function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+  
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   return (
     <div className="bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white">
       <Header />
-      <ThemeToggle />
-      <Banner />
+      <Banner scrollToElement={scrollToElement} />
       <Nav />
       <About />
       <Experience />
