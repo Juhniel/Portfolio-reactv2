@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
-// const repoBase = process.env.NODE_ENV === 'production' ? '/Portfolio-reactv2/' : '/';
+const repoBase = process.env.NODE_ENV === 'production' ? '/Portfolio-reactv2/' : '/';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base: repoBase,
+  base: repoBase,
   build: {
     outDir: "docs",
   },
