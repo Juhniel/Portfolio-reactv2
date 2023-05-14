@@ -13,12 +13,12 @@ import webshop from "../assets/project-webshop.png";
 export default function Work({handleViewAllProjects}) {
   const myLatest = "My Latest".split("");
   const work = "Work".split("");
-  const viewMyWork = "View my work".split("");
+  const viewMyWork = "View all projects".split("");
   
   return (
     <section
     className="section"
-    id="work">
+    id="latest-projects">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-x-12">
           <motion.div 

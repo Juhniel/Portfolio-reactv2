@@ -30,7 +30,7 @@ export default function App() {
 
   function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
-  
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -40,7 +40,11 @@ export default function App() {
     <div className="bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white">
       <Header />
       <Banner scrollToElement={scrollToElement} />
-      <Nav />
+      <Nav
+        handleSwitchComponent={handleSwitchComponent}
+        showWork={showWork}
+        showAnotherComponent={showAnotherComponent}
+      />
       <About />
       <Experience />
       <AnimatePresence>
@@ -50,7 +54,9 @@ export default function App() {
           />
         )}
         {showAnotherComponent && (
-          <AllProjects handleSwitchComponent={() => handleSwitchComponent("Work")} />
+          <AllProjects
+            handleSwitchComponent={() => handleSwitchComponent("Work")}
+          />
         )}
       </AnimatePresence>
 

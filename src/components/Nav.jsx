@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { BiHomeAlt, BiUser } from "react-icons/bi";
 import { BsBriefcase, BsChatSquareText } from "react-icons/bs";
 import { TbFileCertificate } from "react-icons/tb";
+import { Link, Element } from "react-scroll";
 
-
-export default function Nav() {
+export default function Nav({handleSwitchComponent, showWork, showAnotherComponent}) {
   const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
@@ -17,21 +17,30 @@ export default function Nav() {
           }
         });
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 }
     );
 
-    const sections = document.querySelectorAll("section");
+    const observeSections = () => {
+      const sections = document.querySelectorAll("section");
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      return () => {
+        sections.forEach((section) => {
+          observer.unobserve(section);
+        });
+      };
+    };
+
+    const unobserveSections = observeSections();
 
     return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+      unobserveSections();
     };
-  }, []);
+  }, [showWork, showAnotherComponent]); // Add dependencies here
+
 
   return (
     <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
@@ -63,13 +72,17 @@ export default function Nav() {
             <TbFileCertificate />
           </a>
           <a
-            href="#work"
+             href={showWork ? "#latest-projects" : "#all-projects"}
+            onClick={handleSwitchComponent}
             className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${
-              activeLink === "work" ? "active" : ""
+              activeLink === "latest-projects" || activeLink === "all-projects"
+                ? "active"
+                : ""
             }`}
           >
             <BsBriefcase />
           </a>
+
           <a
             href="#contact"
             className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center ${

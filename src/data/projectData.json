@@ -71,6 +71,17 @@
           "Java",
           "Swing"
         ]
+      },
+      {
+        "name": "Calendar",
+        "description": "Desktop-application made with Java and Swing. Simple week-calendar where the user can add and remove events on the calendar. ",
+        "img": "java",
+        "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
+        "category": "desktop",
+        "stack": [
+          "Java",
+          "Swing"
+        ]
       }
     ]
   }

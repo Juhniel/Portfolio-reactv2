@@ -11,7 +11,7 @@ export default function Contact() {
   const sendMsg = "Send Message".split("");
 
   return (
-    <section id="contact" className="section mt-80 lg:mt-96">
+    <section id="contact" className="section mt-80 lg:mt-[28rem]">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}
