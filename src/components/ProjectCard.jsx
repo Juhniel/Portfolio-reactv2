@@ -1,10 +1,10 @@
 import React from "react"
-import recipebook from "../assets/project-recipebook.png";
-import portfoliov1 from "../assets/project-portfoliov1.png";
-import webshop from "../assets/project-webshop.png";
-import java from "../assets/java.png";
-import spring from "../assets/spring.png";
-import javascript from "../assets/javascript.png";
+import recipebook from "../assets/images/projects/project-recipebook.png";
+import portfoliov1 from "../assets/images/projects/project-portfoliov1.png";
+import webshop from "../assets/images/projects/project-webshop.png";
+import java from "../assets/images/projects/java.png";
+import spring from "../assets/images/projects/spring.png";
+import javascript from "../assets/images/projects/javascript.png";
 import { motion } from "framer-motion";
 import { FaJava } from "react-icons/fa";
 import { fadeIn, fadeOut } from "../variants";

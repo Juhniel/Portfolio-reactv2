@@ -1,5 +1,5 @@
 import React from "react";
-import Selfie from "../assets/cv-nobg.png";
+import Selfie from "../assets/images/selfies/cv-nobg.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";

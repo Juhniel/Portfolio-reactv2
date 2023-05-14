@@ -1,12 +1,11 @@
 import React from "react";
-
-import { motion, AnimatePresence} from "framer-motion";
+import { motion } from "framer-motion";
 import TextAnimation from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
 import { fadeIn, fadeOut } from "../variants";
-import recipebook from "../assets/project-recipebook.png";
-import portfoliov1 from "../assets/project-portfoliov1.png";
-import webshop from "../assets/project-webshop.png";
+import recipebook from "../assets/images/projects/project-recipebook.png";
+import portfoliov1 from "../assets/images/projects/project-portfoliov1.png";
+import webshop from "../assets/images/projects/project-webshop.png";
 
 
 

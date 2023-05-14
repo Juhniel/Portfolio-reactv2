@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Switch from "react-switch";
-import { BsSun, BsMoonStars } from "react-icons/bs";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function ThemeToggle() {

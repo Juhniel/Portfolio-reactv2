@@ -28,8 +28,7 @@ export default {
         accent: "#baffcd",
       },
       backgroundImage: {
-        about: "url('./assets/selfie2.png')",
-        experience: "url('./assets/services.png')",
+        about: "url('./assets/images/selfies/selfie2.png')",
       },
     },
   },
