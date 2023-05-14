@@ -42,17 +42,22 @@ export default function Experience({ scrollToElement, showAllProjects }) {
               As a highly motivated individual with a passion for learning and
               self-improvement, I have gained valuable experience in the world
               of programming since July 2022. My diverse skill set includes
-              languages such as Java & JavaScript aswell as front-end technologies 
-              like React and CSS. Alongside this,I have also developed a strong 
-              understanding of back-end tools, including Spring and SQL databases. 
-              I continuously strive to expand my knowledge and stay up-to-date with the latest
-              industry trends, enabling me to deliver cutting-edge solutions in
-              my projects. 
-              
-              <br/>
-              <br/>
-              
+              languages such as Java & JavaScript aswell as front-end
+              technologies like React and CSS. Alongside this, I have also
+              developed a understanding of back-end tools, including Spring and
+              SQL databases. I continuously strive to expand my knowledge and
+              stay up-to-date with the latest industry trends, enabling me to
+              deliver cutting-edge solutions in my projects.
+              <br />
+              <br />
               - Juhn K
+              <br />
+              <br />
+              <span className="font-semibold italic "> 
+              Keywords: 
+              <br />
+              Java, Spring, mySQL, PostgreSQL, Git, JavaScript, React,
+              Tailwind </span>
             </h3>
             <button className="btn btn-sm btn-hover text-base">
               <a href={cv} download>

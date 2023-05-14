@@ -1,6 +1,6 @@
 import React from "react";
 import Selfie from "../assets/cv-nobg.png";
-import { FaGithub, FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
@@ -94,16 +94,13 @@ export default function Banner({scrollToElement}) {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
+              className="flex text-[20px] lg:ml-11 gap-x-5 max-w-max mx-auto lg:mx-0"
             >
-              <a href="#">
-                <FaFacebook className="text btn-hover" />
+               <a href="https://www.linkedin.com/in/juhn-kim-7872a5251/" target="_blank">
+                <FaLinkedinIn className="text btn-hover" size={26} />
               </a>
-              <a href="#">
-                <FaGithub className="text btn-hover" />
-              </a>
-              <a href="#">
-                <FaLinkedinIn className="text btn-hover" />
+              <a href="https://github.com/Juhniel" target="_blank">
+                <FaGithub className="text btn-hover" size={26} />
               </a>
             </motion.div>
           </div>
