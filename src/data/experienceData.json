@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Capgemini",
+    "title": "Intern - Software Engineer ",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat quidem maiores quaerat ipsum soluta omnis numquam eligendi! Atque, corporis!",
+    "date": "Jun. 2023 - Aug. 2023",
+    "place": "Malmö, Sweden"
+  },
+  {
+    "name": "Grit Academy",
+    "title": "Student",
+    "description": "Java as programming language with courses within front-end & back-end development.",
+    "date": "Aug. 2022 - Jun. 2024",
+    "place": "Malmö, Sweden"
+  },
+  {
+    "name": "Sweprima AB",
+    "title": "Administration & Coordinator",
+    "description": "Primary responsibilities involved managing the financial aspects of the company. Bookkeeping and invoices including payroll for the employees.",
+    "date": "Aug. 2022 - Jun. 2024",
+    "place": "Halmstad, Sweden"
+  }
+]
