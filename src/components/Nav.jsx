@@ -5,7 +5,7 @@ import { BsBriefcase, BsChatSquareText } from "react-icons/bs";
 import { TbFileCertificate } from "react-icons/tb";
 import { Link, Element } from "react-scroll";
 
-export default function Nav({handleSwitchComponent, showWork, showAnotherComponent}) {
+export default function Nav({handleSwitchComponent, showWork, showAllProjects}) {
   const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Nav({handleSwitchComponent, showWork, showAnotherCompone
     return () => {
       unobserveSections();
     };
-  }, [showWork, showAnotherComponent]); // Add dependencies here
+  }, [showWork, showAllProjects]); // Add dependencies here
 
 
   return (

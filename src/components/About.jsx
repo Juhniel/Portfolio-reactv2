@@ -9,7 +9,7 @@ import { TypeAnimation } from "react-type-animation";
 import TextAnimation from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
 
-export default function About() {
+export default function About({scrollToElement}) {
   const title = "About me".split("");
   const days = "Days".split("");
   const hours = "hours".split("");
@@ -220,7 +220,9 @@ export default function About() {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center"
             >
-              <button className="btn btn-lg btn-hover">
+              <button 
+              onClick={() => scrollToElement("experience")}
+              className="btn btn-lg btn-hover">
               {experience.map((letter, index) => {
                 return (
                   <TextAnimation2 key={index}>

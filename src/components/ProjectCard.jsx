@@ -5,8 +5,8 @@ import webshop from "../assets/project-webshop.png";
 import java from "../assets/java.png";
 import spring from "../assets/spring.png";
 import javascript from "../assets/javascript.png";
-
 import { motion } from "framer-motion";
+import { FaJava } from "react-icons/fa";
 import { fadeIn, fadeOut } from "../variants";
 import {
   SiJavascript,
@@ -23,7 +23,6 @@ import {
   SiTailwindcss
 } from "react-icons/si";
 
-import { FaJava } from "react-icons/fa";
 
 export default function ProductCard({ project }) {
 
@@ -69,6 +68,7 @@ export default function ProductCard({ project }) {
   return (
     <motion.div 
     variants={fadeIn("left", 0.5)}
+    exit={fadeOut("down", 0).exit}
     initial="hidden"
     whileInView={"show"}
     viewport={{ once: false, amount: 0.3 }}

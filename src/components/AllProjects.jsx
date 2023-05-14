@@ -13,6 +13,7 @@ export default function AllProjects({ handleSwitchComponent }) {
 
   function handleFilterChange(filter) {
     setSelectedFilter(filter);
+    setCurrentPage(1);
   }
 
   function handlePageChange(newPage) {
@@ -20,16 +21,7 @@ export default function AllProjects({ handleSwitchComponent }) {
   }
 
   function getCardsPerPage() {
-    return window.innerWidth < 640 ? 1 : 3;
-  }
-
-  function hasMoreProjects() {
-    const totalProjects = projectData.projects.filter(
-      (project) =>
-        selectedFilter === "all" || project.category === selectedFilter
-    ).length;
-
-    return currentPage * CARDS_PER_PAGE < totalProjects;
+    return window.innerWidth < 700 ? 1 : 3;
   }
 
   return (
@@ -37,7 +29,14 @@ export default function AllProjects({ handleSwitchComponent }) {
       <div className="container mx-auto">
         {/* title */}
         <div>
-          <div className="mb-8">
+          <motion.div
+            variants={fadeIn("right", 0.3)}
+            exit={fadeOut("left", 0).exit}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="mb-8"
+          >
             <h1 className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10">
               {projects.map((letter, index) => {
                 return (
@@ -49,17 +48,17 @@ export default function AllProjects({ handleSwitchComponent }) {
             </h1>
             <button
               onClick={handleSwitchComponent}
-              className="btn btn-lg my-2 ml-1"
+              className="btn btn-lg my-2 ml-1 btn-hover"
             >
               View latest projects
             </button>
-          </div>
+          </motion.div>
           {/* category tab */}
           <div className="sm:hidden mb-5">
             <select
               id="tabs"
               onChange={(e) => handleFilterChange(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white dark:focus:border-white"
             >
               <option value="all">All</option>
               <option value="web">Web Application</option>
@@ -67,7 +66,14 @@ export default function AllProjects({ handleSwitchComponent }) {
               <option value="mobile">Mobile Application</option>
             </select>
           </div>
-          <ul className="hidden text-sm text-secondary  font-bold text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400">
+          <motion.ul
+            variants={fadeIn("left", 0.3)}
+            exit={fadeOut("right", 0).exit}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="hidden text-sm text-secondary  font-bold text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400"
+          >
             <li className="w-full">
               <p
                 onClick={() => handleFilterChange("all")}
@@ -116,31 +122,51 @@ export default function AllProjects({ handleSwitchComponent }) {
                 Web Applications
               </p>
             </li>
-          </ul>
+          </motion.ul>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-          {projectData.projects
-            .filter(
+          {(() => {
+            const filteredProjects = projectData.projects.filter(
               (project) =>
                 selectedFilter === "all" || project.category === selectedFilter
-            )
-            .slice(
-              (currentPage - 1) * CARDS_PER_PAGE,
-              currentPage * CARDS_PER_PAGE
-            )
-            .map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+            );
+
+            if (filteredProjects.length === 0) {
+              return (
+                <h1 className="col-span-full text-center">
+                  No projects available
+                </h1>
+              );
+            } else {
+              return filteredProjects
+                .slice(
+                  (currentPage - 1) * CARDS_PER_PAGE,
+                  currentPage * CARDS_PER_PAGE
+                )
+                .map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ));
+            }
+          })()}
         </div>
 
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className="btn btn-lg"
-          >
-            Previous
-          </button>
+        <motion.div
+          variants={fadeIn("right", 0.3)}
+          exit={fadeOut("left", 0).exit}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="flex justify-center mt-8"
+        >
+          {currentPage > 1 && (
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="btn btn-lg btn-hover"
+            >
+              Previous
+            </button>
+          )}
           {currentPage * CARDS_PER_PAGE <
             projectData.projects.filter(
               (project) =>
@@ -148,12 +174,12 @@ export default function AllProjects({ handleSwitchComponent }) {
             ).length && (
             <button
               onClick={() => handlePageChange(currentPage + 1)}
-              className="btn btn-lg ml-2"
+              className="btn btn-lg btn-hover ml-2"
             >
               {CARDS_PER_PAGE === 1 ? "Next Project" : "Next"}
             </button>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

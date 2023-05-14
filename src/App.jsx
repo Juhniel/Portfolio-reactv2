@@ -12,18 +12,19 @@ import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
   const [showWork, setShowWork] = useState(true);
-  const [showAnotherComponent, setShowAnotherComponent] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  
 
   function handleSwitchComponent(component) {
     if (component === "Work") {
-      setShowAnotherComponent(false);
+      setShowAllProjects(false);
       setTimeout(() => {
         setShowWork(true);
       }, 1000); // Adjust the timeout according to your exit animation duration
     } else if (component === "AllProjects") {
       setShowWork(false);
       setTimeout(() => {
-        setShowAnotherComponent(true);
+        setShowAllProjects(true);
       }, 1000); // Adjust the timeout according to your exit animation duration
     }
   }
@@ -43,17 +44,17 @@ export default function App() {
       <Nav
         handleSwitchComponent={handleSwitchComponent}
         showWork={showWork}
-        showAnotherComponent={showAnotherComponent}
+        showAllProjects={showAllProjects}
       />
-      <About />
-      <Experience />
+      <About scrollToElement={scrollToElement} />
+      <Experience scrollToElement={scrollToElement} showAllProjects={showAllProjects} />
       <AnimatePresence>
         {showWork && (
           <Work
             handleViewAllProjects={() => handleSwitchComponent("AllProjects")}
           />
         )}
-        {showAnotherComponent && (
+        {showAllProjects && (
           <AllProjects
             handleSwitchComponent={() => handleSwitchComponent("Work")}
           />
@@ -61,7 +62,7 @@ export default function App() {
       </AnimatePresence>
 
       <Contact />
-      <div className="h-[4000px]"></div>
+      {/* <div className="h-[4000px]"></div> */}
     </div>
   );
 }

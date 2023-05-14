@@ -30,7 +30,7 @@ const experience = [
   },
 ];
 
-export default function Experience() {
+export default function Experience({scrollToElement, showAllProjects}) {
   const experienceTitle = "Experience".split("");
   const download = "Download CV".split("");
   const portfolio = "Portfolio".split("");
@@ -76,7 +76,9 @@ export default function Experience() {
               })}
               </a>
             </button>
-            <button className="btn btn-sm btn-hover text-base ml-3">
+            <button 
+            onClick={() => scrollToElement(showAllProjects ? "all-projects" : "latest-projects")}
+            className="btn btn-sm btn-hover text-base ml-3">
               
             {portfolio.map((letter, index) => {
                 return (
