@@ -20,14 +20,21 @@ export default function AllProjects({ handleSwitchComponent }) {
   }
 
   function getCardsPerPage() {
-    return window.innerWidth < 640 ? 3 : 6; 
+    return window.innerWidth < 640 ? 1 : 3;
+  }
+
+  function hasMoreProjects() {
+    const totalProjects = projectData.projects.filter(
+      (project) =>
+        selectedFilter === "all" || project.category === selectedFilter
+    ).length;
+
+    return currentPage * CARDS_PER_PAGE < totalProjects;
   }
 
   return (
     <section className="section" id="all-projects">
-      <div
-        className="container mx-auto"
-      >
+      <div className="container mx-auto">
         {/* title */}
         <div>
           <div className="mb-8">
@@ -42,7 +49,7 @@ export default function AllProjects({ handleSwitchComponent }) {
             </h1>
             <button
               onClick={handleSwitchComponent}
-              className="btn btn-lg my-2 mb-8"
+              className="btn btn-lg my-2 ml-1"
             >
               View latest projects
             </button>
@@ -126,43 +133,27 @@ export default function AllProjects({ handleSwitchComponent }) {
             ))}
         </div>
 
-        <div className="hidden sm:flex justify-center mt-8">
-  <button
-    onClick={() => handlePageChange(currentPage - 1)}
-    disabled={currentPage === 1}
-    className="btn btn-md mx-2"
-  >
-    Previous
-  </button>
-  <button
-    onClick={() => handlePageChange(currentPage + 1)}
-    disabled={
-      currentPage * CARDS_PER_PAGE >=
-      projectData.projects.filter(
-        (project) =>
-          selectedFilter === "all" || project.category === selectedFilter
-      ).length
-    }
-    className="btn btn-md mx-2"
-  >
-    Next
-  </button>
-</div>
-<div className="sm:hidden flex justify-center mt-8">
-  <button
-    onClick={() => handlePageChange(currentPage + 1)}
-    disabled={
-      currentPage * CARDS_PER_PAGE >=
-      projectData.projects.filter(
-        (project) =>
-          selectedFilter === "all" || project.category === selectedFilter
-      ).length
-    }
-    className="btn btn-md mx-2"
-  >
-    Show More
-  </button>
-</div>
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="btn btn-lg"
+          >
+            Previous
+          </button>
+          {currentPage * CARDS_PER_PAGE <
+            projectData.projects.filter(
+              (project) =>
+                selectedFilter === "all" || project.category === selectedFilter
+            ).length && (
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              className="btn btn-lg ml-2"
+            >
+              {CARDS_PER_PAGE === 1 ? "Next Project" : "Next"}
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

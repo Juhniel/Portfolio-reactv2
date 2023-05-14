@@ -62,7 +62,7 @@ export default function Experience() {
                 );
               })}
             </motion.h1>
-            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-12">
+            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-12 ml-2">
              I have been programming since July 2022. 
             </h3>
             <button className="btn btn-sm btn-hover text-base">

@@ -120,8 +120,9 @@ export default function About() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[10px] xl:text-[68px] font-thin btn-hover-rainbow"
+              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin btn-hover-rainbow"
             >
+              
               <h3>
                 {graduation.map((letter, index) => {
                   return (

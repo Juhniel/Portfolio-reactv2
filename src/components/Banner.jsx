@@ -78,7 +78,7 @@ export default function Banner({scrollToElement}) {
             >
               <button 
               onClick={() => scrollToElement("contact")}
-              className="btn btn-lg btn-hover animate-bounce text-base">
+              className="btn btn-lg btn-hover text-base">
                 {contactMe.map((letter, index) => {
                   return (
                     <TextAnimation2 key={index}>

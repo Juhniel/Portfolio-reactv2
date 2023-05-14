@@ -72,12 +72,12 @@ export default function ProductCard({ project }) {
     initial="hidden"
     whileInView={"show"}
     viewport={{ once: false, amount: 0.3 }}
-    className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-full flex flex-col">
+    className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-[700px] xl:h-[800px] flex flex-col">
       {/* Image container */}
       <div className="group relative h-62">
         {/* Image */}
         <img
-          className="w-full h-full lg:object-cover group-hover:scale-125 transition-all duration-500"
+          className="w-full  xl:h-[350px] lg:object-cover group-hover:scale-125 transition-all duration-500"
           src={images[project.img]}
           alt="project image"
         />
@@ -104,7 +104,7 @@ export default function ProductCard({ project }) {
 
       {/* Card content */}
 
-      <div className="mt-14 lg:mt-10 flex-grow flex flex-col">
+      <div className="mt-14 lg:mt-10 flex-grow h-74 flex flex-col">
       <p className="text-secondary font-medium text-black dark:text-white flex-grow mb-4">
         {project.description}
       </p>
