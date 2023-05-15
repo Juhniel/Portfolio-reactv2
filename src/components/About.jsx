@@ -9,7 +9,7 @@ import { TypeAnimation } from "react-type-animation";
 import TextAnimation from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
 
-export default function About({scrollToElement}) {
+export default function About({ scrollToElement }) {
   const title = "About me".split("");
   const days = "Days".split("");
   const hours = "hours".split("");
@@ -34,13 +34,9 @@ export default function About({scrollToElement}) {
           case "hours":
             return <span className="text">{hours}</span>;
           case "minutes":
-            return (
-              <span className="text">{minutes}</span>
-            );
+            return <span className="text">{minutes}</span>;
           case "seconds":
-            return (
-              <span className="text">{seconds}</span>
-            );
+            return <span className="text">{seconds}</span>;
           default:
             return null;
         }
@@ -106,11 +102,10 @@ export default function About({scrollToElement}) {
               />
             </div>
             <p className="mb-6">
-              I am currently studying to become a software developer. My
-              interest in development started in 2022 when I decided to give{" "}
-              <span className="font-semibold">Java</span> a try. Fast-forward to
-              today, I started school, met awesome new people and fell in love
-              with programming and web development.
+              I embarked on my journey to become a software developer in 2022,
+              when my curiosity led me to explore Java programming. Since then,
+              my passion for programming and web development has only grown
+              stronger. 
               <br />
               <br />
             </p>
@@ -122,7 +117,6 @@ export default function About({scrollToElement}) {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin btn-hover-rainbow"
             >
-              
               <h3>
                 {graduation.map((letter, index) => {
                   return (
@@ -220,16 +214,17 @@ export default function About({scrollToElement}) {
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center"
             >
-              <button 
-              onClick={() => scrollToElement("experience")}
-              className="btn btn-lg btn-hover">
-              {experience.map((letter, index) => {
-                return (
-                  <TextAnimation2 key={index}>
-                    {letter === " " ? "\u00A0" : letter}
-                  </TextAnimation2>
-                );
-              })}
+              <button
+                onClick={() => scrollToElement("experience")}
+                className="btn btn-lg btn-hover"
+              >
+                {experience.map((letter, index) => {
+                  return (
+                    <TextAnimation2 key={index}>
+                      {letter === " " ? "\u00A0" : letter}
+                    </TextAnimation2>
+                  );
+                })}
               </button>
             </motion.div>
           </motion.div>

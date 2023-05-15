@@ -28,7 +28,7 @@ export default function Experience({ scrollToElement, showAllProjects }) {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10"
+              className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[100px] xl:mb-10"
             >
               {experienceTitle.map((letter, index) => {
                 return (
@@ -38,26 +38,36 @@ export default function Experience({ scrollToElement, showAllProjects }) {
                 );
               })}
             </motion.h1>
-            <h3 className="text-secondary text-black dark:text-white max-w[455px] mb-12 ml-2">
-              "As a highly motivated individual with a passion for learning and
-              self-improvement, I have gained valuable experience in the world
-              of programming since July 2022. My diverse skill set includes
-              languages such as Java & JavaScript aswell as front-end
-              technologies like React and CSS. Alongside this, I have also
-              developed a understanding of back-end tools, including Spring and
-              SQL databases. I continuously strive to expand my knowledge and
-              stay up-to-date with the latest industry trends, enabling me to
-              deliver cutting-edge solutions in my projects."
+            <div className="text-secondary text-black dark:text-white max-w[455px] mb-2 ml-2 relative">
+              <h3>
+                As a highly motivated individual with a passion for learning
+                and self-improvement, I have gained valuable experience in the
+                world of programming since July 2022. My diverse skill set
+                includes languages such as Java & JavaScript and frameworks like
+                React and Spring. <br /> <br />Alongside this, I have also developed a
+                understanding of back-end tools & frameworks. I continuously
+                strive to expand my knowledge and stay up-to-date with the
+                latest industry trends, enabling me to deliver cutting-edge
+                solutions in my projects. 
+                <br />
+              </h3>
+            </div>
+
+            <span className="flex justify-end mr-12 italic font-light text-black dark:text-white">
+              - Juhn Kim
+            </span>
+            <br />
+            <h3 className="text-secondary text-black dark:text-white mb-5">
+              <span className="font-light text-[24px] tracking-wider mb-2">
+                Keywords
+              </span>
               <br />
-              <br />
-              <span className="flex justify-end mr-12 italic font-thin">- Juhn Kim</span>
-              <br />
-              <span className="font-medium italic "> 
-              Keywords: 
-              <br />
-              #Java #Spring #mySQL #PostgreSQL #Git #JavaScript #React
-              #Tailwind </span>
+              <span className="font-medium mb-2">
+                #Java #Spring #mySQL #PostgreSQL #Git #HTML #CSS #JavaScript
+                #React #Tailwind #Swing #Agile{" "}
+              </span>
             </h3>
+
             <button className="btn btn-sm btn-hover text-base">
               <a href={cv} download>
                 {download.map((letter, index) => {
