@@ -50,13 +50,12 @@ export default function Experience({ scrollToElement, showAllProjects }) {
               deliver cutting-edge solutions in my projects."
               <br />
               <br />
-              <span className="font-secondary font-semibold">- Juhn K</span> 
-              <br />
+              <span className="flex justify-end mr-12 italic font-thin">- Juhn Kim</span>
               <br />
               <span className="font-medium italic "> 
               Keywords: 
               <br />
-              #Java #Spring #mySQL #PostgreSQL #Git #JavaScript #React,
+              #Java #Spring #mySQL #PostgreSQL #Git #JavaScript #React
               #Tailwind </span>
             </h3>
             <button className="btn btn-sm btn-hover text-base">
