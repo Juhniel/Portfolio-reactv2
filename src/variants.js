@@ -1,4 +1,11 @@
-export const fadeIn = (direction, delay) => {
+
+
+export const fadeIn = (direction, delay, isMobileDevice) => {
+
+  if (isMobileDevice) {
+    return {};
+  }
+
     return {
       hidden: {
         y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
@@ -19,7 +26,12 @@ export const fadeIn = (direction, delay) => {
     };
   };
 
-  export const fadeOut = (direction, delay) => {
+  export const fadeOut = (direction, delay, isMobileDevice) => {
+
+    if (isMobileDevice) {
+      return {};
+    } 
+
     return {
       exit: {
         y: direction === "up" ? -80 : direction === "down" ? 80 : 0,

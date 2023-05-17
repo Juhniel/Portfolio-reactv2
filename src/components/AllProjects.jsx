@@ -30,11 +30,11 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
         {/* title */}
         <div>
           <motion.div
-            variants={fadeIn("right", 0.3)}
-            exit={fadeOut("left", 0).exit}
+            variants={fadeIn("right", 0.3, isMobileDevice)}
+            exit={fadeOut("left", 0, isMobileDevice).exit}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: isMobileDevice ? true  : false, amount: 0.7 }}
+            viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
             className="mb-8"
           >
             <h1 className="text text-[60px] mb-7 font-light leading-[0.8] xl:text-[110px] xl:mb-10">
@@ -67,11 +67,11 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
             </select>
           </div>
           <motion.ul
-            variants={fadeIn("left", 0.3)}
-            exit={fadeOut("right", 0).exit}
+            variants={fadeIn("left", 0.3, isMobileDevice)}
+            exit={fadeOut("right", 0, isMobileDevice).exit}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: isMobileDevice ? true  : false, amount: 0.7 }}
+            viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
             className="hidden text-sm text-secondary  font-bold text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400"
           >
             <li className="w-full">
@@ -144,18 +144,22 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
                   currentPage * CARDS_PER_PAGE
                 )
                 .map((project, index) => (
-                  <ProjectCard key={index} project={project} isMobileDevice={isMobileDevice} />
+                  <ProjectCard
+                    key={index}
+                    project={project}
+                    isMobileDevice={isMobileDevice}
+                  />
                 ));
             }
           })()}
         </div>
 
         <motion.div
-          variants={fadeIn("right", 0.3)}
-          exit={fadeOut("left", 0).exit}
+          variants={fadeIn("right", 0.3, isMobileDevice)}
+          exit={fadeOut("left", 0, isMobileDevice).exit}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: isMobileDevice ? true  : false, amount: 0.7 }}
+          viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
           className="flex justify-center mt-8"
         >
           {currentPage > 1 && (

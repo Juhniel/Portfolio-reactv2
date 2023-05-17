@@ -39,23 +39,23 @@ export default function About({ scrollToElement, isMobileDevice }) {
   const graduationDate = new Date("2024-05-30T00:00:00");
 
   return (
-    <section className="section" id="about" ref={ref}>
+    <section className="section mb-20" id="about" ref={ref}>
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen">
           {/* img */}
           <motion.div
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("right", 0.3, isMobileDevice)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
+            viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
             className="flex-1 bg-about bg-contain bg-no-repeat hidden lg:block lg:h-[480px] bg-top rounded-full duration-700 grayscale hover:grayscale-0"
           ></motion.div>
           {/* text */}
           <motion.div
-            variants={fadeIn("left", 0.5)}
+            variants={fadeIn("left", 0.5, isMobileDevice)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
+            viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
             className="flex-1 text-black dark:text-white"
           >
             <h1 className="text-[55px] font-primary mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white">
@@ -98,27 +98,25 @@ export default function About({ scrollToElement, isMobileDevice }) {
               I embarked on my journey to become a software developer in 2022,
               when my curiosity led me to explore Java programming. Since then,
               my passion for programming and web development has only grown
-              stronger. 
+              stronger.
               <br />
               <br />
             </p>
             {/* GRADUATION */}
             <motion.div
-              variants={fadeIn("up", 0.3)}
+              variants={fadeIn("up", 0.3, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin btn-hover-rainbow"
             >
-              <h3>
-                Graduation
-              </h3>
+              <h3>Graduation</h3>
             </motion.div>
             <motion.div
-              variants={fadeIn("up", 0.3)}
+              variants={fadeIn("up", 0.3, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="flex justify-center mt-14 gap-x-8 lg:gap-x-10 mb-12"
             >
               <div>
@@ -129,9 +127,7 @@ export default function About({ scrollToElement, isMobileDevice }) {
                     intervalDelay={0}
                   />
                 </div>
-                <div className="font-primary  text-sm tracking-[2px]">
-                  days
-                </div>
+                <div className="font-primary  text-sm tracking-[2px]">days</div>
               </div>
               <div>
                 <div className="text-[40px] mb-2 font-primary">
@@ -141,9 +137,7 @@ export default function About({ scrollToElement, isMobileDevice }) {
                     intervalDelay={0}
                   />
                 </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                 hours
-                </div>
+                <div className="font-primary text-sm tracking-[2px]">hours</div>
               </div>
               <div>
                 <div className="text text-[40px] mb-2">
@@ -171,17 +165,17 @@ export default function About({ scrollToElement, isMobileDevice }) {
               </div>
             </motion.div>
             <motion.div
-              variants={fadeIn("up", 0.5)}
+              variants={fadeIn("up", 0.5, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="flex justify-center"
             >
               <button
                 onClick={() => scrollToElement("experience")}
                 className="btn btn-lg btn-hover"
               >
-              Experience
+                Experience
               </button>
             </motion.div>
           </motion.div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import TextAnimation from "./TextAnimation";
 import TextAnimation2 from "./TextAnimationFishEye";
@@ -10,16 +10,28 @@ import webshop from "../assets/images/projects/project-webshop.png";
 export default function Work({ handleViewAllProjects, isMobileDevice }) {
   const myLatest = "My Latest".split("");
   const work = "Work".split("");
+  const [showMore, setShowMore] = useState(false);
+
+  const description = `Explore a collection of my most recent projects, where I
+  showcase my skills in development, web-development and design.`;
+
+  const moreText = `These works demonstrate my passion for creating
+  innovative solutions and my commitment to continuous learning
+  and improvement.`;
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
 
   return (
     <section className="section" id="latest-projects">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-x-12">
-          <div className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[4.7rem] xl:mt-[3.8rem]">
+          <div className="flex-1 flex flex-col gap-y-10 lg:mt-[4.7rem] xl:mt-[3.8rem]">
             {/* text */}
             <div>
               <motion.div
-                variants={fadeIn("right", 0.3)}
+                variants={fadeIn("right", 0.3, isMobileDevice)}
                 exit={fadeOut("left", 0).exit}
                 initial="hidden"
                 whileInView={"show"}
@@ -48,21 +60,23 @@ export default function Work({ handleViewAllProjects, isMobileDevice }) {
                 </h2>
               </motion.div>
               <motion.p
-                variants={fadeIn("right", 0.3)}
+                variants={fadeIn("right", 0.3, isMobileDevice)}
                 exit={fadeOut("left", 0).exit}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
                 className="max-w-lg mb-16 text-secondary text-black dark:text-white"
               >
-                Explore a collection of my most recent projects, where I
-                showcase my skills in development, web-development and design.{" "}
-                <br /> These works demonstrate my passion for creating
-                innovative solutions and my commitment to continuous learning
-                and improvement.
+                {description}
+                {isMobileDevice && !showMore ? "... " : moreText}
+                {isMobileDevice && (
+                  <button onClick={toggleShowMore} className="text-amber-400 dark:text-amber-200">
+                    {showMore ? "Show less" : "Show more"}
+                  </button>
+                )}
               </motion.p>
               <motion.button
-                variants={fadeIn("right", 0.3)}
+                variants={fadeIn("right", 0.3, isMobileDevice)}
                 exit={fadeOut("left", 0).exit}
                 initial="hidden"
                 whileInView={"show"}
@@ -75,18 +89,18 @@ export default function Work({ handleViewAllProjects, isMobileDevice }) {
             </div>
             {/* image */}
             <motion.div
-              variants={fadeIn("right", 0.3)}
+              variants={fadeIn("right", 0.3, isMobileDevice)}
               exit={fadeOut("left", 0).exit}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-              className="group relative overflow-hidden rounded-xl"
+              className="hidden lg:inline-block group relative overflow-hidden rounded-xl mt-[1.9rem]"
             >
               {/* overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
               <img
-                className="group-hover:scale-125 transition-all duration-500"
+                className="group-hover:scale-125 transition-all duration-500 w-full"
                 src={recipebook}
                 alt=""
               />
@@ -103,12 +117,12 @@ export default function Work({ handleViewAllProjects, isMobileDevice }) {
             </motion.div>
           </div>
           <motion.div
-            variants={fadeIn("left", 0.5)}
+            variants={fadeIn("left", 0.5, isMobileDevice)}
             exit={fadeOut("right", 0).exit}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-            className="flex-1 flex flex-col gap-y-10 mb-10 lg:mt-[8rem]"
+            className="hidden lg:flex flex-1  flex-col gap-y-10 mb-10 lg:mt-[8rem]"
           >
             {/* image */}
             <div className="group relative overflow-hidden rounded-xl">

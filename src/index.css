@@ -49,27 +49,6 @@ span {
   .btn-hover {
     @apply hover:text-amber-400 hover:border-amber-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
   } 
-  .btn-hover-red {
-    @apply hover:text-red-400 hover:border-red-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-orange {
-    @apply hover:text-orange-400 hover:border-orange-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-yellow {
-    @apply hover:text-yellow-400 hover:border-yellow-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-light-blue {
-    @apply hover:text-sky-400 hover:border-sky-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-blue {
-    @apply hover:text-blue-400  hover:border-blue-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-indigo {
-    @apply hover:text-indigo-400 hover:border-indigo-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  } 
-  .btn-hover-violet {
-    @apply hover:text-violet-400 hover:border-violet-400 dark:hover:text-amber-200 dark:hover:border-amber-200 transition-colors duration-300;
-  }   
   .btn-link {
     @apply text-base;
   }

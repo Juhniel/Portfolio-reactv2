@@ -52,24 +52,13 @@
       },
       {
         "name": "Weather Website",
-        "description": "Weather web-application created in Java with Apache Tomcat as webserver. We used JSP to show the data on a static website and fetched data from https://openweathermap.org. User can search for any country and get the weather report from each country.",
+        "description": "Weather web-application created in Java with Apache Tomcat as webserver. We used JSP to show the data on a static website and fetched data from https://openweathermap.org.",
         "img": "java",
         "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
         "category": "web",
         "stack": [
           "Java",
           "Tomcat"
-        ]
-      },
-      {
-        "name": "Calendar",
-        "description": "Desktop-application made with Java and Swing. Simple week-calendar where the user can add and remove events on the calendar. ",
-        "img": "java",
-        "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
-        "category": "desktop",
-        "stack": [
-          "Java",
-          "Swing"
         ]
       },
       {

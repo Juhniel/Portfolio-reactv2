@@ -11,14 +11,14 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
   return (
     <section
       id="home"
-      className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
+      className="min-h-[85vh] lg:min-h-[78vh] flex items-center mb-10 lg:m-20"
     >
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* text */}
           <div className="flex-1 text-center font-primary lg:text-left">
             <motion.h1
-              variants={fadeIn("up", 0.3)}
+              variants={fadeIn("up", 0.3, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
@@ -33,7 +33,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
               })}
             </motion.h1>
             <motion.div
-              variants={fadeIn("up", 0.5)}
+              variants={fadeIn("up", 0.5, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
@@ -59,7 +59,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
               />
             </motion.div>
             <motion.p
-              variants={fadeIn("up", 0.4)}
+              variants={fadeIn("up", 0.4, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
@@ -68,7 +68,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
               - welcome to my porfolio
             </motion.p>
             <motion.div
-              variants={fadeIn("up", 0.6)}
+              variants={fadeIn("up", 0.6, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
@@ -83,7 +83,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
             </motion.div>
             {/* Socials */}
             <motion.div
-              variants={fadeIn("up", 0.7)}
+              variants={fadeIn("up", 0.7, isMobileDevice)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
@@ -102,7 +102,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
           </div>
           {/* image */}
           <motion.div
-            variants={fadeIn("down", 0.5)}
+            variants={fadeIn("down", 0.5, isMobileDevice)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
