@@ -5,11 +5,9 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import TextAnimation from "./TextAnimation";
-import TextAnimation2 from "./TextAnimationFishEye";
 
-export default function Banner({scrollToElement}) {
+export default function Banner({ scrollToElement, isMobileDevice }) {
   const name = "Juhn Kim".split("");
-  const contactMe = "Contact Me".split("");
   return (
     <section
       id="home"
@@ -23,7 +21,7 @@ export default function Banner({scrollToElement}) {
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="text-[55px] mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white"
             >
               {name.map((letter, index) => {
@@ -38,7 +36,7 @@ export default function Banner({scrollToElement}) {
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="mb-4 ml-6 text-[36px] lg:text-[40px] xl:text-[60px] font-secondary font-semibold  leading-[1]"
             >
               <span className="mr-2 text">I'm a</span>
@@ -64,7 +62,7 @@ export default function Banner({scrollToElement}) {
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0 text-black dark:text-white"
             >
               - welcome to my porfolio
@@ -73,19 +71,14 @@ export default function Banner({scrollToElement}) {
               variants={fadeIn("up", 0.6)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <button 
-              onClick={() => scrollToElement("contact")}
-              className="btn btn-lg btn-hover text-base">
-                {contactMe.map((letter, index) => {
-                  return (
-                    <TextAnimation2 key={index}>
-                      {letter === " " ? "\u00A0" : letter}
-                    </TextAnimation2>
-                  );
-                })}
+              <button
+                onClick={() => scrollToElement("contact")}
+                className="btn btn-lg btn-hover text-base"
+              >
+                Contact Me
               </button>
             </motion.div>
             {/* Socials */}
@@ -93,10 +86,13 @@ export default function Banner({scrollToElement}) {
               variants={fadeIn("up", 0.7)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
               className="flex text-[20px] lg:ml-11 gap-x-5 max-w-max mx-auto lg:mx-0"
             >
-               <a href="https://www.linkedin.com/in/juhn-kim-7872a5251/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/juhn-kim-7872a5251/"
+                target="_blank"
+              >
                 <FaLinkedinIn className="text btn-hover" size={26} />
               </a>
               <a href="https://github.com/Juhniel" target="_blank">
@@ -109,6 +105,7 @@ export default function Banner({scrollToElement}) {
             variants={fadeIn("down", 0.5)}
             initial="hidden"
             whileInView={"show"}
+            viewport={{ once: isMobileDevice ? true : false, amount: 0.7 }}
             className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]"
           >
             <img

@@ -7,16 +7,9 @@ import { fadeIn } from "../variants";
 import { TypeAnimation } from "react-type-animation";
 
 import TextAnimation from "./TextAnimation";
-import TextAnimation2 from "./TextAnimationFishEye";
 
-export default function About({ scrollToElement }) {
+export default function About({ scrollToElement, isMobileDevice }) {
   const title = "About me".split("");
-  const days = "Days".split("");
-  const hours = "hours".split("");
-  const minutes = "minutes".split("");
-  const seconds = "seconds".split("");
-  const graduation = "Graduation".split("");
-  const experience = "Experience".split("");
 
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -54,7 +47,7 @@ export default function About({ scrollToElement }) {
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
             className="flex-1 bg-about bg-contain bg-no-repeat hidden lg:block lg:h-[480px] bg-top rounded-full duration-700 grayscale hover:grayscale-0"
           ></motion.div>
           {/* text */}
@@ -62,7 +55,7 @@ export default function About({ scrollToElement }) {
             variants={fadeIn("left", 0.5)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
             className="flex-1 text-black dark:text-white"
           >
             <h1 className="text-[55px] font-primary mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white">
@@ -114,27 +107,21 @@ export default function About({ scrollToElement }) {
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
               className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin btn-hover-rainbow"
             >
               <h3>
-                {graduation.map((letter, index) => {
-                  return (
-                    <TextAnimation key={index}>
-                      {letter === " " ? "\u00A0" : letter}
-                    </TextAnimation>
-                  );
-                })}
+                Graduation
               </h3>
             </motion.div>
             <motion.div
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
               className="flex justify-center mt-14 gap-x-8 lg:gap-x-10 mb-12"
             >
-              <div className="btn-hover-light-blue">
+              <div>
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -143,16 +130,10 @@ export default function About({ scrollToElement }) {
                   />
                 </div>
                 <div className="font-primary  text-sm tracking-[2px]">
-                  {days.map((letter, index) => {
-                    return (
-                      <TextAnimation key={index}>
-                        {letter === " " ? "\u00A0" : letter}
-                      </TextAnimation>
-                    );
-                  })}
+                  days
                 </div>
               </div>
-              <div className="btn-hover-blue">
+              <div>
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -161,16 +142,10 @@ export default function About({ scrollToElement }) {
                   />
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
-                  {hours.map((letter, index) => {
-                    return (
-                      <TextAnimation key={index}>
-                        {letter === " " ? "\u00A0" : letter}
-                      </TextAnimation>
-                    );
-                  })}
+                 hours
                 </div>
               </div>
-              <div className="btn-hover-indigo">
+              <div>
                 <div className="text text-[40px] mb-2">
                   <CountDown
                     date={graduationDate}
@@ -179,16 +154,10 @@ export default function About({ scrollToElement }) {
                   />
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
-                  {minutes.map((letter, index) => {
-                    return (
-                      <TextAnimation key={index}>
-                        {letter === " " ? "\u00A0" : letter}
-                      </TextAnimation>
-                    );
-                  })}
+                  minutes
                 </div>
               </div>
-              <div className="btn-hover-violet">
+              <div>
                 <div className="text-[40px] mb-2 font-primary">
                   <CountDown
                     date={graduationDate}
@@ -197,13 +166,7 @@ export default function About({ scrollToElement }) {
                   />
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
-                  {seconds.map((letter, index) => {
-                    return (
-                      <TextAnimation key={index}>
-                        {letter === " " ? "\u00A0" : letter}
-                      </TextAnimation>
-                    );
-                  })}
+                  seconds
                 </div>
               </div>
             </motion.div>
@@ -211,20 +174,14 @@ export default function About({ scrollToElement }) {
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
               className="flex justify-center"
             >
               <button
                 onClick={() => scrollToElement("experience")}
                 className="btn btn-lg btn-hover"
               >
-                {experience.map((letter, index) => {
-                  return (
-                    <TextAnimation2 key={index}>
-                      {letter === " " ? "\u00A0" : letter}
-                    </TextAnimation2>
-                  );
-                })}
+              Experience
               </button>
             </motion.div>
           </motion.div>

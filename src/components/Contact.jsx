@@ -3,12 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, fadeOut } from "../variants";
 import TextAnimation1 from "./TextAnimation";
-import TextAnimation2 from "./TextAnimationFishEye";
 
-export default function Contact() {
+export default function Contact({isMobileDevice}) {
   const contactTitle = "Let's work".split("");
   const together = "together!".split("");
-  const sendMsg = "Send Message".split("");
 
   return (
     <section id="contact" className="section mt-80 lg:mt-[28rem]">
@@ -20,7 +18,7 @@ export default function Contact() {
           exit={fadeOut("right", 0).exit}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
           className="flex-1 flex justify-start items-center">
             <div>
             <h2 className="text text-[60px] lg:text-[90px] xl:text-[110px] leading-none mb-14 lg:mb-40 xl:mb-48">
@@ -49,7 +47,7 @@ export default function Contact() {
           exit={fadeOut("left", 0).exit}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
           action="https://formsubmit.co/e6cfc893776581ce228c666ab181a78d" 
           method="POST"
           className="flex-1 flex flex-col gap-y-6 pb-24 p-6 items-start">
@@ -76,13 +74,8 @@ export default function Contact() {
             ></textarea>
             <button type="submit" 
             className="btn btn-sm btn-hover text-base">
-              {sendMsg.map((letter, index) => {
-                return (
-                  <TextAnimation2 key={index}>
-                    {letter === " " ? "\u00A0" : letter}
-                  </TextAnimation2>
-                );
-              })}</button>
+              Send Message
+              </button>
           </motion.form>
         </div>
       </div>

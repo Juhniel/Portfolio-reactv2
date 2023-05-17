@@ -24,7 +24,7 @@ import {
 } from "react-icons/si";
 
 
-export default function ProductCard({ project }) {
+export default function ProductCard({ project, isMobileDevice }) {
 
   const images = {
     "recipebook": recipebook,
@@ -71,7 +71,7 @@ export default function ProductCard({ project }) {
     exit={fadeOut("down", 0).exit}
     initial="hidden"
     whileInView={"show"}
-    viewport={{ once: false, amount: 0.3 }}
+    viewport={{ once: isMobileDevice ? true  : false, amount: 0.3 }}
     className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-[700px] xl:h-[800px] flex flex-col">
       {/* Image container */}
       <div className="group relative h-62">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Banner from "./components/Banner";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
@@ -8,12 +8,23 @@ import Experience from "./components/Experience";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import AllProjects from "./components/AllProjects";
-import ThemeToggle from "./components/ThemeToggle";
+
 
 export default function App() {
   const [showWork, setShowWork] = useState(true);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobileDevice(window.innerWidth < 768);
+    }
   
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   function handleSwitchComponent(component) {
     if (component === "Work") {
@@ -39,30 +50,32 @@ export default function App() {
 
   return (
     <div className="bg-white bg-no-repeat bg-cover overflow-hidden dark:bg-zinc-900 dark:text-white">
-      <Header />
-      <Banner scrollToElement={scrollToElement} />
+      <Header isMobileDevice={isMobileDevice} showAllProjects={showAllProjects} />
+      <Banner scrollToElement={scrollToElement} isMobileDevice={isMobileDevice} />
       <Nav
         handleSwitchComponent={handleSwitchComponent}
         showWork={showWork}
         showAllProjects={showAllProjects}
+        isMobileDevice={isMobileDevice}
       />
-      <About scrollToElement={scrollToElement} />
-      <Experience scrollToElement={scrollToElement} showAllProjects={showAllProjects} />
+      <About scrollToElement={scrollToElement} isMobileDevice={isMobileDevice} />
+      <Experience scrollToElement={scrollToElement} showAllProjects={showAllProjects} isMobileDevice={isMobileDevice} />
       <AnimatePresence>
         {showWork && (
           <Work
+            isMobileDevice={isMobileDevice}
             handleViewAllProjects={() => handleSwitchComponent("AllProjects")}
           />
         )}
         {showAllProjects && (
           <AllProjects
+            isMobileDevice={isMobileDevice}
             handleSwitchComponent={() => handleSwitchComponent("Work")}
           />
         )}
       </AnimatePresence>
 
-      <Contact />
-      {/* <div className="h-[4000px]"></div> */}
+      <Contact isMobileDevice={isMobileDevice} />
     </div>
   );
 }
