@@ -122,37 +122,39 @@ export default function Work({ handleViewAllProjects, isMobileDevice }) {
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
               className="hidden lg:inline-block group relative overflow-hidden rounded-xl mt-[1.9rem]"
             >
-              {/* overlay */}
-              <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
-              {/* img */}
               <a
-                href="https://github.com/Juhniel/RecipeBookSpring"
+                href={projectArray[0].link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {/* overlay */}
+                <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
+                {/* img */}
+
                 <img
                   className="group-hover:scale-125 transition-all duration-500 w-full"
                   src={images[firstImage]}
                   alt=""
                 />
+                {/* pretitle */}
+                <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
+                  {projectArray[0].stack.map((stackItem, index) => (
+                    <span
+                      key={index}
+                      className="text-white"
+                    >{` #${stackItem}\u00A0 `}</span>
+                  ))}
+                </div>
+                {/* title */}
+                <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50">
+                  <span className="text-3xl text-white">
+                    {projectArray[0].name}
+                  </span>
+                </div>
               </a>
-              {/* pretitle */}
-              <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
-                {projectArray[0].stack.map((stackItem, index) => (
-                  <span
-                    key={index}
-                    className="text-white"
-                  >{` #${stackItem}\u00A0 `}</span>
-                ))}
-              </div>
-              {/* title */}
-              <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50">
-                <span className="text-3xl text-white">
-                  {projectArray[0].name}
-                </span>
-              </div>
             </motion.div>
           </div>
+
           <motion.div
             variants={fadeIn("left", 0.5, isMobileDevice)}
             exit={fadeOut("right", 0).exit}
