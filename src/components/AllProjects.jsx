@@ -46,12 +46,6 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
                 );
               })}
             </h1>
-            <button
-              onClick={handleSwitchComponent}
-              className="btn btn-lg my-2 ml-1 btn-hover"
-            >
-              View latest projects
-            </button>
           </motion.div>
           {/* category tab */}
           <div className="sm:hidden mb-5">
@@ -133,7 +127,7 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
 
             if (filteredProjects.length === 0) {
               return (
-                <h1 className="col-span-full text-center">
+                <h1 className="col-span-full text-center text-black dark:text-white">
                   No projects available
                 </h1>
               );
@@ -153,7 +147,6 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
             }
           })()}
         </div>
-
         <motion.div
           variants={fadeIn("right", 0.3, isMobileDevice)}
           exit={fadeOut("left", 0, isMobileDevice).exit}
@@ -166,7 +159,7 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="btn btn-lg btn-hover"
+              className="btn btn-lg lg:btn-hover"
             >
               Previous
             </button>
@@ -178,11 +171,25 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
             ).length && (
             <button
               onClick={() => handlePageChange(currentPage + 1)}
-              className="btn btn-lg btn-hover ml-2"
+              className="btn btn-lg lg:btn-hover ml-2"
             >
               {CARDS_PER_PAGE === 1 ? "Next Project" : "Next"}
             </button>
           )}
+        </motion.div>
+        <motion.div 
+         variants={fadeIn("left", 0.5, isMobileDevice)}
+         exit={fadeOut("right", 0).exit}
+         initial="hidden"
+         whileInView={"show"}
+         viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
+        className="flex justify-center mt-5">
+          <button
+            onClick={handleSwitchComponent}
+            className="btn btn-lg my-2 ml-1 lg:btn-hover"
+          >
+            Back to latest projects
+          </button>
         </motion.div>
       </div>
     </section>

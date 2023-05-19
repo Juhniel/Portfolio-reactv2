@@ -19,10 +19,10 @@ export default function Contact({ isMobileDevice }) {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-            className="flex-1 flex justify-start items-center"
+            className="lg:flex-1 lg:flex lg:justify-start items-center"
           >
             <div>
-              <h2 className="text text-[60px] lg:text-[90px] xl:text-[110px] leading-none mb-14 lg:mb-40 xl:mb-48">
+              <h2 className="text text-center lg:text-start text-[60px] lg:text-[90px] xl:text-[110px] leading-none mb-14 lg:mb-40 xl:mb-48">
                 {contactTitle.map((letter, index) => {
                   return (
                     <TextAnimation1 key={index}>
@@ -74,9 +74,11 @@ export default function Contact({ isMobileDevice }) {
               placeholder="Your message"
               required
             ></textarea>
-            <button type="submit" className="btn btn-sm btn-hover text-base">
-              Send Message
+            <div className="flex w-full justify-center lg:justify-end">
+            <button type="submit" className="btn btn-sm lg:btn-hover text-base">
+              Send message
             </button>
+            </div>
           </motion.form>
         </div>
       </div>

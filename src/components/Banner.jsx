@@ -11,7 +11,7 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
   return (
     <section
       id="home"
-      className="min-h-[85vh] lg:min-h-[78vh] flex items-center mb-10 lg:m-20"
+      className="min-h-[85vh] lg:min-h-[78vh] flex items-center mb-20 mt-20 lg:m-20"
     >
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
@@ -76,9 +76,9 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
             >
               <button
                 onClick={() => scrollToElement("contact")}
-                className="btn btn-lg btn-hover text-base"
+                className="btn btn-lg lg:btn-hover text-base"
               >
-                Contact Me
+                Contact me
               </button>
             </motion.div>
             {/* Socials */}
@@ -93,10 +93,10 @@ export default function Banner({ scrollToElement, isMobileDevice }) {
                 href="https://www.linkedin.com/in/juhn-kim-7872a5251/"
                 target="_blank"
               >
-                <FaLinkedinIn className="text btn-hover" size={26} />
+                <FaLinkedinIn className="text lg:btn-hover" size={26} />
               </a>
               <a href="https://github.com/Juhniel" target="_blank">
-                <FaGithub className="text btn-hover" size={26} />
+                <FaGithub className="text lg:btn-hover" size={26} />
               </a>
             </motion.div>
           </div>

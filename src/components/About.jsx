@@ -56,7 +56,7 @@ export default function About({ scrollToElement, isMobileDevice }) {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-            className="flex-1 text-black dark:text-white"
+            className="flex flex-col items-center lg:flex-1 text-black dark:text-white"
           >
             <h1 className="text-[55px] font-primary mb-2 font-light leading-[0.8] lg:text-[90px] xl:text-[110px] text-black dark:text-white">
               {title.map((letter, index) => {
@@ -94,9 +94,9 @@ export default function About({ scrollToElement, isMobileDevice }) {
                 repeat={Infinity}
               />
             </div>
-            <p className="mb-6">
+            <p className="mb-6 mx-10 text-center">
               I embarked on my journey to become a software developer in 2022,
-              when my curiosity led me to explore Java programming. Since then,
+              when my curiosity led me to explore Java. Since then,
               my passion for programming and web development has only grown
               stronger.
               <br />
@@ -108,9 +108,9 @@ export default function About({ scrollToElement, isMobileDevice }) {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin btn-hover-rainbow"
+              className="flex justify-center font-primary text-[48px] tracking-[2px] lg:tracking-[4px] xl:text-[68px] font-thin lg:btn-hover"
             >
-              <h3>Graduation</h3>
+              <h3 className="text-[34px]">Graduation</h3>
             </motion.div>
             <motion.div
               variants={fadeIn("up", 0.3, isMobileDevice)}
@@ -173,7 +173,7 @@ export default function About({ scrollToElement, isMobileDevice }) {
             >
               <button
                 onClick={() => scrollToElement("experience")}
-                className="btn btn-lg btn-hover"
+                className="btn btn-lg lg:btn-hover"
               >
                 Experience
               </button>

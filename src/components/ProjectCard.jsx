@@ -88,22 +88,25 @@ export default function ProductCard({ project, isMobileDevice }) {
   return (
     <motion.div
       variants={fadeIn("left", 0.5, isMobileDevice)}
-      exit={fadeOut("down", 0).exit}
+      exit={fadeOut("right", 0).exit}
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-      className="dark:bg-zinc-800 rounded-md p-4 shadow-xl relative overflow-hidden h-[400px] xl:h-[720px] flex flex-col"
+      className="dark:bg-zinc-800 rounded-md shadow-xl relative overflow-hidden h-[430px] lg:h-[720px] flex flex-col"
     >
       {/* Image container */}
-      <div className="group  flex justify-center relative h-62">
+      <div className="group flex justify-center relative h-64">
         {/* Image */}
         {isMobileDevice ? (
           <div className="text-black dark:text-white">
+            <span className="flex justify-center">
             <FaFolder size={40} />
+            </span>
+            <p className="font-secondary text-black dark:text-white text-xl font-bold">{project.name}</p>
           </div>
         ) : (
           <img
-            className="w-full  xl:h-[300px] lg:object-cover group-hover:scale-125 transition-all duration-500"
+            className="w-full lg:h-[300px] lg:object-fit group-hover:scale-125 transition-all duration-500"
             src={images[project.img]}
             alt="project image"
           />
@@ -111,7 +114,7 @@ export default function ProductCard({ project, isMobileDevice }) {
 
         {/* Overlay */}
         {!isMobileDevice && (
-          <div className="group-hover:bg-black/70 group-hover:scale-125 w-full h-full top-0 absolute z-80 transition-all duration-300"></div>
+          <div className="group-hover:bg-black/70 group-hover:scale-[1.64] w-full h-full top-0 absolute z-80 transition-all duration-300"></div>
         )}
 
         {/* Pretitle */}
@@ -127,7 +130,7 @@ export default function ProductCard({ project, isMobileDevice }) {
                 </span>
               ))}
             </div>
-            <div className="absolute bottom-4 left-4 group-hover:bottom-3 lg:group-hover:bottom-10 xl:group-hover:bottom-3 transition-all duration-700 z-50">
+            <div className="absolute -bottom-5 lg:bottom-0 lg:left-4 group-hover:bottom-5 lg:group-hover:bottom-10 xl:group-hover:-bottom-16 transition-all duration-700 z-50">
               <span className="text-3xl tracking-wide text-white opacity-0 group-hover:opacity-100">
                 {project.name}
               </span>
@@ -138,14 +141,14 @@ export default function ProductCard({ project, isMobileDevice }) {
 
       {/* Card content */}
 
-      <div className="mt-4 lg:mt-10 flex-grow h-74 flex flex-col">
-        <p className="text-secondary font-medium text-black dark:text-white flex-grow mb-4">
+      <div className="lg:mt-10 flex-grow h-74 flex flex-col">
+        <p className="text-secondary font-medium text-black dark:text-white flex-grow mb-14 lg:mt-12 text-center mx-4">
           {project.description}
         </p>
         <a
-          href={project.link}
+          href={project.github}
           target="_blank"
-          className="text-secondary text-xl btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center mb-12"
+          className="text-secondary text-xl lg:btn-hover text-black dark:text-white tracking-widest font-bold flex justify-center mb-12"
         >
           Link to project
           <span className="ml-2 text-2xl text-black dark:text-white">

@@ -5,6 +5,7 @@
         "description": "Spring boot project backed by mySQL. This application allows users to search, discover and save their favourite recipes. Personalized account creation and profile editing options.",
         "img": "recipebook",
         "link": "https://github.com/Juhniel/RecipeBookSpring",
+        "github": "https://github.com/Juhniel/RecipeBookSpring",
         "category": "web",
         "stack": [
           "Spring",
@@ -17,7 +18,8 @@
         "name": "Webshop",
         "description": "React project backed by Firebase real-time database. Simple webshop styled with tailwind. As a user you are able to add products to the cart and purchase products.",
         "img": "webshop",
-        "link": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
+        "link": "https://juhniel.github.io/java22-avjs-slutprojekt-Juhn-Kim/",
+        "github": "https://github.com/Juhniel/java22-avjs-slutprojekt-Juhn-Kim",
         "category": "web",  
         "stack": [
           "JavaScript",
@@ -28,9 +30,10 @@
       },
       {
         "name": "Portfolio v1",
-        "description": "This was one of my first projects ever created which showcase a portfolio of my work. ",
+        "description": "One of the first websites and the first portfolio created. Worked mainly with HTML, CSS and some JavaScript.",
         "img": "portfoliov1",
-        "link": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
+        "link": "https://juhniel.github.io/JAVA22-html-slutprojekt-Juhn-Kim/",
+        "github": "https://github.com/Juhniel/JAVA22-html-slutprojekt-Juhn-Kim",
         "category": "web",
         "stack": [
           "HTML",
@@ -43,6 +46,7 @@
         "description": "This project is a flickr clone which is a image service where you can upload and see other people's images. Flickr's own API and search functions with filter.",
         "img": "javascript",
         "link": "https://github.com/Juhniel/java22-js-slutprojekt-Juhn-Kim",
+        "github": "https://juhniel.github.io/java22-js-slutprojekt-Juhn-Kim/",
         "category": "web",
         "stack": [
           "HTML",
@@ -55,6 +59,7 @@
         "description": "Weather web-application created in Java with Apache Tomcat as webserver. We used JSP to show the data on a static website and fetched data from https://openweathermap.org.",
         "img": "java",
         "link": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
+        "github": "https://github.com/Juhniel/JAVA22-JavaWebDev-Slutprojekt-Juhn-Kim/tree/main/SlutprojektWeather",
         "category": "web",
         "stack": [
           "Java",
@@ -66,6 +71,7 @@
         "description": "Desktop-application made with Java and Swing. Simple week-calendar where the user can add and remove events on the calendar. ",
         "img": "java",
         "link": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
+        "github": "https://github.com/Juhniel/JAVA22-java1-slutprojekt-Juhn-Kim",
         "category": "desktop",
         "stack": [
           "Java",

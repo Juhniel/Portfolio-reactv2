@@ -32,11 +32,11 @@ export default function Experience({
   `;
 
   return (
-    <section id="experience" className="section lg:mb-96">
-      <div className="container mx-auto">
+    <section id="experience" className="section">
+      <div className="container mx-auto mb-80 lg:mb-0">
         <div className="flex flex-col lg:flex-row">
           {/* text & image*/}
-          <div className="flex-1 lg:bg-bottom mb-12 mr-14 lg:mb-0">
+          <div className="flex flex-col items-center lg:items-start lg:flex-1 lg:bg-bottom mb-12 lg:mr-14 lg:mb-0">
             <motion.h1
               variants={fadeIn("right", 0.3, isMobileDevice)}
               initial="hidden"
@@ -57,11 +57,11 @@ export default function Experience({
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
-              className="text-secondary text-black dark:text-white max-w[455px] mb-2 ml-2 relative"
+              className="text-secondary mx-10  text-center lg:text-start lg:mr-12 text-black dark:text-white max-w[455px] mb-2 ml-2 relative"
             >
               <h3>
                 {description}
-                {isMobileDevice && !showMore ? "... " : moreText}
+                {isMobileDevice && !showMore ? "\u000A" : moreText}
                 {isMobileDevice && (
                   <button
                     onClick={toggleShowMore}
@@ -78,22 +78,22 @@ export default function Experience({
               whileInView={"show"}
               viewport={{ once: isMobileDevice ? true : false, amount: 0.3 }}
             >
-              <span className="flex justify-end mr-12 italic font-light text-black dark:text-white">
+              <span className="flex justify-end mr-4 lg:mr-20 italic font-light text-black dark:text-white">
                 - Juhn Kim
               </span>
               <br />
-              <h3 className="text-secondary text-black dark:text-white mb-5">
-                <span className="font-light text-[24px] tracking-wider mb-2">
+              <h3 className="text-secondary text-center text-black dark:text-white mb-5">
+                <span className="font-secondary font-medium text-[20px] tracking-wide mb-2">
                   Keywords
                 </span>
                 <br />
-                <span className="font-medium mb-2">
+                <span className="font-thin mb-2 ">
                   #Java #Spring #mySQL #PostgreSQL #Git #HTML #CSS #JavaScript
                   #React #Tailwind #Swing #Agile{" "}
                 </span>
               </h3>
               <div className="flex justify-center">    
-              <button className="btn btn-sm btn-hover text-base">
+              <button className="btn btn-sm lg:btn-hover text-base">
                 <a href={cv} download>
                   Download CV
                 </a>
@@ -104,7 +104,7 @@ export default function Experience({
                     showAllProjects ? "all-projects" : "latest-projects"
                   )
                 }
-                className="btn btn-sm btn-hover text-base ml-3"
+                className="btn btn-sm lg:btn-hover text-base ml-3"
               >
                 Portfolio
               </button>
@@ -120,7 +120,7 @@ export default function Experience({
             className="flex-1"
           >
             {/* experience list */}
-            <div className="text mt-8 h-30">
+            <div className="text mt-24 lg:mt-6 h-30">
               {experienceData.map((experience, index) => {
                 const { name, description, title, date, place } = experience;
 
@@ -145,7 +145,7 @@ export default function Experience({
                       <p className="text font-thin mb-6">{title}</p>
                       <p className="font-secondary leading-tight mb-12">
                         {isMobileDevice && !showMoreExp
-                          ? `${shortDescription}... `
+                          ? `${shortDescription} `
                           : description}
                         {isMobileDevice && (
                           <button
