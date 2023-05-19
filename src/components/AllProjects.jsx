@@ -25,7 +25,7 @@ export default function AllProjects({ handleSwitchComponent, isMobileDevice }) {
   }
 
   return (
-    <section className="section" id="all-projects">
+    <section className="section lg:mt-80" id="all-projects">
       <div className="container mx-auto">
         {/* title */}
         <div>

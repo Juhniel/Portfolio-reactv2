@@ -42,7 +42,7 @@ export default function Work({ handleViewAllProjects, isMobileDevice }) {
   };
 
   return (
-    <section className="section" id="latest-projects">
+    <section className="section lg:mt-80" id="latest-projects">
       <div className="container mx-auto">
         <div className="flex flex-col items-center lg:flex-row gap-x-12">
           <div className="lg:flex-1 flex flex-col gap-y-10 lg:mt-[4.7rem] xl:mt-[3.8rem]">
