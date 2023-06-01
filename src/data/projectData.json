@@ -77,6 +77,18 @@
           "Java",
           "Swing"
         ]
+      },
+      {
+        "name": "Bank application",
+        "description": "Console-application created with Java. Creating new user, open up bank accounts, sending funds and transaction history. (Works like mobile-pay/Swish)",
+        "img": "java",
+        "link": "https://github.com/Juhniel/JAVA22-databas-slutprojekt-Juhn-Kim",
+        "github": "https://github.com/Juhniel/JAVA22-databas-slutprojekt-Juhn-Kim",
+        "category": "desktop",
+        "stack": [
+          "Java",
+          "mySQL"
+        ]
       }
     ]
   }
