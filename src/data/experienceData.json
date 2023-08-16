@@ -1,8 +1,8 @@
 [
   {
     "name": "Capgemini",
-    "title": "Intern - Software Engineer ",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat quidem maiores quaerat ipsum soluta omnis numquam eligendi! Atque, corporis!",
+    "title": "Internship - Software Engineer ",
+    "description": "During my internship at Capgemini, I engaged a series of tasks that contributed to overall efficiency, security, and innovations within AWS. Strategies to reduce cold start times through caching, pre-compilation and modularization. Automating deployment process for multiple Lambdas during library changes. Exploring various technologies and services like Kafka, API Gateway, Kinetics, Redshift, Bedrock. ",
     "date": "Jun. 2023 - Aug. 2023",
     "place": "Malmö, Sweden"
   },
