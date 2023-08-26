@@ -135,7 +135,7 @@ export default function Experience({
 
                 return (
                   <div
-                    className="border-b border-black/20 dark:border-white/20 mb-14 lg:h-[240px] xl:h-[200px] flex"
+                    className="border-b border-black/20 dark:border-white/20 mb-14  flex"
                     key={index}
                   >
                     <div className="max-w-[476px]">
