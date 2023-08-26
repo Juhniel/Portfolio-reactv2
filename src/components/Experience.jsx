@@ -152,7 +152,7 @@ export default function Experience({
                             onClick={toggleShowMoreExp}
                             className="text-amber-400 dark:text-amber-200"
                           >
-                            {showMoreExp ? "Show less" : "Show more"}
+                            {showMoreExp ? " Show less" : " Show more"}
                           </button>
                         )}
                       </p>
